@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6E197BE42190D664006FC412 /* NGTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E197BDA2190D663006FC412 /* NGTools.framework */; };
-		6E197BE92190D664006FC412 /* NGToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BE82190D664006FC412 /* NGToolsTests.swift */; };
 		6E197BEB2190D664006FC412 /* NGTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E197BDD2190D663006FC412 /* NGTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E197C012190D672006FC412 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BF42190D672006FC412 /* curry.swift */; };
 		6E197C022190D672006FC412 /* copyOnWriteValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BF52190D672006FC412 /* copyOnWriteValueType.swift */; };
@@ -37,7 +36,6 @@
 		6E197BDD2190D663006FC412 /* NGTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGTools.h; sourceTree = "<group>"; };
 		6E197BDE2190D663006FC412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E197BE32190D664006FC412 /* NGToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NGToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E197BE82190D664006FC412 /* NGToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NGToolsTests.swift; sourceTree = "<group>"; };
 		6E197BEA2190D664006FC412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E197BF42190D672006FC412 /* curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = curry.swift; sourceTree = "<group>"; };
 		6E197BF52190D672006FC412 /* copyOnWriteValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = copyOnWriteValueType.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		6E197BE72190D664006FC412 /* NGToolsTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E197BE82190D664006FC412 /* NGToolsTests.swift */,
 				6E197BEA2190D664006FC412 /* Info.plist */,
 			);
 			path = NGToolsTests;
@@ -266,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E197BE92190D664006FC412 /* NGToolsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
