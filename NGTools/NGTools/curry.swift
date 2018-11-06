@@ -6,6 +6,9 @@
 //  Copyright © 2018 Nuglif. All rights reserved.
 //
 
+/// Currying is used to break down a function that has multiple arguments into a series of functions that take part of the arguments.
+/// - seealso:
+/// [Currying](https://medium.com/nuglif/functional-swift-currying-d398a73bf1ed)
 public func curry<A, B, C>(_ function: @escaping (A, B) -> C) -> (A) -> (B) -> C {
     return { a in
         return { b in
@@ -14,6 +17,9 @@ public func curry<A, B, C>(_ function: @escaping (A, B) -> C) -> (A) -> (B) -> C
     }
 }
 
+/// Currying is used to break down a function that has multiple arguments into a series of functions that take part of the arguments.
+/// - seealso:
+/// [Currying](https://medium.com/nuglif/functional-swift-currying-d398a73bf1ed)
 public func curry<A, B, C, D>(_ function: @escaping (A, B, C) -> D) -> (A) -> (B) -> (C) -> D {
     return { (a: A) in
         return { (b: B) in
@@ -24,6 +30,9 @@ public func curry<A, B, C, D>(_ function: @escaping (A, B, C) -> D) -> (A) -> (B
     }
 }
 
+/// Currying is used to break down a function that has multiple arguments into a series of functions that take part of the arguments.
+/// - seealso:
+/// [Currying](https://medium.com/nuglif/functional-swift-currying-d398a73bf1ed)
 public func curry<A, B, C, D, E>(_ function: @escaping (A, B, C, D) -> E) -> (A) -> (B) -> (C) -> (D) -> E {
     return { (a: A) in
         return { (b: B) in
@@ -36,6 +45,9 @@ public func curry<A, B, C, D, E>(_ function: @escaping (A, B, C, D) -> E) -> (A)
     }
 }
 
+/// Currying is used to break down a function that has multiple arguments into a series of functions that take part of the arguments.
+/// - seealso:
+/// [Currying](https://medium.com/nuglif/functional-swift-currying-d398a73bf1ed)
 public func curry<A, B, C, D, E, F>(_ function: @escaping (A, B, C, D, E) -> F) -> (A) -> (B) -> (C) -> (D) -> (E) -> F {
     return { (a: A) in
         return { (b: B) in
@@ -50,6 +62,9 @@ public func curry<A, B, C, D, E, F>(_ function: @escaping (A, B, C, D, E) -> F) 
     }
 }
 
+/// Currying is used to break down a function that has multiple arguments into a series of functions that take part of the arguments.
+/// - seealso:
+/// [Currying](https://medium.com/nuglif/functional-swift-currying-d398a73bf1ed)
 public func curry<A, B, C, D, E, F, G>(_ function: @escaping (A, B, C, D, E, F) -> G) -> (A) -> (B) -> (C) -> (D) -> (E) -> (F) -> G {
     return { (a: A) in
         return { (b: B) in
