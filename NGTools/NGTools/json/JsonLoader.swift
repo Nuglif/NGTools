@@ -18,7 +18,7 @@ public protocol JsonLoader {
     func decodeJson<T: Decodable>(decoder: JSONDecoder, for type: T.Type) -> T?
 }
 
-extension JsonLoader {
+public extension JsonLoader {
     public func decodeJson<T: Decodable>(decoder: JSONDecoder = JSONDecoder(), for type: T.Type = T.self) -> T? {
         var result: T?
         do {
@@ -30,6 +30,3 @@ extension JsonLoader {
         }
     }
 }
-
-extension Dictionary: JsonLoader {}
-extension NSDictionary: JsonLoader {}
