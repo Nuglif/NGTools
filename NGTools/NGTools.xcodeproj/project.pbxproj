@@ -19,6 +19,7 @@
 		6E197C082190D672006FC412 /* reflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BFD2190D672006FC412 /* reflect.swift */; };
 		6E197C092190D672006FC412 /* UIColor+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BFF2190D672006FC412 /* UIColor+UIImage.swift */; };
 		6E197C0A2190D672006FC412 /* UIImage+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197C002190D672006FC412 /* UIImage+UIColor.swift */; };
+		D861C39F219225DE009E7E29 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861C39E219225DE009E7E29 /* CacheItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6E197BFD2190D672006FC412 /* reflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reflect.swift; sourceTree = "<group>"; };
 		6E197BFF2190D672006FC412 /* UIColor+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIImage.swift"; sourceTree = "<group>"; };
 		6E197C002190D672006FC412 /* UIImage+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIColor.swift"; sourceTree = "<group>"; };
+		D861C39E219225DE009E7E29 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				6E197BFE2190D672006FC412 /* ui */,
 				6E197BDD2190D663006FC412 /* NGTools.h */,
 				6E197BDE2190D663006FC412 /* Info.plist */,
+				D861C39E219225DE009E7E29 /* CacheItem.swift */,
 			);
 			path = NGTools;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				6E197C082190D672006FC412 /* reflect.swift in Sources */,
 				6E197C062190D672006FC412 /* memoization.swift in Sources */,
 				6E197C052190D672006FC412 /* JsonLoader.swift in Sources */,
+				D861C39F219225DE009E7E29 /* CacheItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
