@@ -30,3 +30,6 @@ public extension JsonLoader {
         }
     }
 }
+
+extension Dictionary: JsonLoader {}
+extension NSDictionary: JsonLoader {}
