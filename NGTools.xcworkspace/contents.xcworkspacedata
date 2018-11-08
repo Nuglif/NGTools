@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Volumes/Users_Data/Users/awerck/Dev/NGTools-Fork/NGTools-Example.playground">
+   </FileRef>
+   <FileRef
+      location = "container:NGTools/NGTools.xcodeproj">
+   </FileRef>
+</Workspace>
