@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Volumes/Users_Data/Users/awerck/Dev/NGTools-Fork/NGTools-Example.playground">
+      location = "group:NGTools-Example.playground">
    </FileRef>
    <FileRef
       location = "container:NGTools/NGTools.xcodeproj">
