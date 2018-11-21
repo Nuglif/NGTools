@@ -21,3 +21,19 @@ public func reflect<T>(_ subject: T?, defaultValue: String = "") -> String {
         return defaultValue
     }
 }
+
+/// Allows to pretty log optionnal types unboxing them and logging real description
+/// or provided default value if 'nil'
+///
+/// - Parameters:
+///   - subject: optional type that must be unwraped for describing purpose
+///   - defaultValue: value to log if subject is nil
+/// - Returns: string suitable for business use
+public func describe<T>(_ subject: T?, defaultValue: String = "") -> String {
+    switch subject {
+    case .some(let value):
+        return String(describing: value)
+    case .none:
+        return defaultValue
+    }
+}
