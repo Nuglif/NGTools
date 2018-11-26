@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E05F16421AC7A38004C59E5 /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E05F15921AC7A38004C59E5 /* crypt.h */; };
+		6E05F16521AC7A38004C59E5 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E05F15A21AC7A38004C59E5 /* ioapi.c */; };
+		6E05F16621AC7A38004C59E5 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E05F15B21AC7A38004C59E5 /* ioapi.h */; };
+		6E05F16721AC7A38004C59E5 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E05F15C21AC7A38004C59E5 /* mztools.c */; };
+		6E05F16821AC7A38004C59E5 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E05F15D21AC7A38004C59E5 /* mztools.h */; };
+		6E05F16921AC7A38004C59E5 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E05F15E21AC7A38004C59E5 /* unzip.c */; };
+		6E05F16A21AC7A38004C59E5 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E05F15F21AC7A38004C59E5 /* unzip.h */; };
+		6E05F16B21AC7A38004C59E5 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6E05F16021AC7A38004C59E5 /* zip.c */; };
+		6E05F16C21AC7A38004C59E5 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E05F16121AC7A38004C59E5 /* zip.h */; };
+		6E05F16D21AC7A38004C59E5 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E05F16221AC7A38004C59E5 /* ZipArchive.h */; };
+		6E05F16E21AC7A38004C59E5 /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E05F16321AC7A38004C59E5 /* ZipArchive.m */; };
 		6E197BE42190D664006FC412 /* NGTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E197BDA2190D663006FC412 /* NGTools.framework */; };
 		6E197BEB2190D664006FC412 /* NGTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E197BDD2190D663006FC412 /* NGTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E197C012190D672006FC412 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BF42190D672006FC412 /* curry.swift */; };
@@ -34,6 +45,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E05F15921AC7A38004C59E5 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		6E05F15A21AC7A38004C59E5 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		6E05F15B21AC7A38004C59E5 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		6E05F15C21AC7A38004C59E5 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		6E05F15D21AC7A38004C59E5 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		6E05F15E21AC7A38004C59E5 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		6E05F15F21AC7A38004C59E5 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		6E05F16021AC7A38004C59E5 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		6E05F16121AC7A38004C59E5 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		6E05F16221AC7A38004C59E5 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		6E05F16321AC7A38004C59E5 /* ZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipArchive.m; sourceTree = "<group>"; };
 		6E197BDA2190D663006FC412 /* NGTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NGTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E197BDD2190D663006FC412 /* NGTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGTools.h; sourceTree = "<group>"; };
 		6E197BDE2190D663006FC412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +94,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E05F15721AC7A38004C59E5 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				6E05F15821AC7A38004C59E5 /* zip */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
+		6E05F15821AC7A38004C59E5 /* zip */ = {
+			isa = PBXGroup;
+			children = (
+				6E05F15921AC7A38004C59E5 /* crypt.h */,
+				6E05F15A21AC7A38004C59E5 /* ioapi.c */,
+				6E05F15B21AC7A38004C59E5 /* ioapi.h */,
+				6E05F15C21AC7A38004C59E5 /* mztools.c */,
+				6E05F15D21AC7A38004C59E5 /* mztools.h */,
+				6E05F15E21AC7A38004C59E5 /* unzip.c */,
+				6E05F15F21AC7A38004C59E5 /* unzip.h */,
+				6E05F16021AC7A38004C59E5 /* zip.c */,
+				6E05F16121AC7A38004C59E5 /* zip.h */,
+				6E05F16221AC7A38004C59E5 /* ZipArchive.h */,
+				6E05F16321AC7A38004C59E5 /* ZipArchive.m */,
+			);
+			path = zip;
+			sourceTree = "<group>";
+		};
 		6E197BD02190D663006FC412 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +141,7 @@
 		6E197BDC2190D663006FC412 /* NGTools */ = {
 			isa = PBXGroup;
 			children = (
+				6E05F15721AC7A38004C59E5 /* files */,
 				6E197BFB2190D672006FC412 /* Array.swift */,
 				6E197BF52190D672006FC412 /* copyOnWriteValueType.swift */,
 				6E197BF42190D672006FC412 /* curry.swift */,
@@ -142,7 +191,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E05F16D21AC7A38004C59E5 /* ZipArchive.h in Headers */,
+				6E05F16C21AC7A38004C59E5 /* zip.h in Headers */,
+				6E05F16621AC7A38004C59E5 /* ioapi.h in Headers */,
+				6E05F16A21AC7A38004C59E5 /* unzip.h in Headers */,
 				6E197BEB2190D664006FC412 /* NGTools.h in Headers */,
+				6E05F16421AC7A38004C59E5 /* crypt.h in Headers */,
+				6E05F16821AC7A38004C59E5 /* mztools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,11 +300,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E197C032190D672006FC412 /* AnyDecodable.swift in Sources */,
+				6E05F16521AC7A38004C59E5 /* ioapi.c in Sources */,
 				6E197C042190D672006FC412 /* FailableDecodable.swift in Sources */,
 				6E197C072190D672006FC412 /* Array.swift in Sources */,
+				6E05F16721AC7A38004C59E5 /* mztools.c in Sources */,
+				6E05F16E21AC7A38004C59E5 /* ZipArchive.m in Sources */,
 				6E197C012190D672006FC412 /* curry.swift in Sources */,
+				6E05F16921AC7A38004C59E5 /* unzip.c in Sources */,
 				6EA14E622194B878005B44F7 /* Validator.swift in Sources */,
 				6E197C022190D672006FC412 /* copyOnWriteValueType.swift in Sources */,
+				6E05F16B21AC7A38004C59E5 /* zip.c in Sources */,
 				6E197C0A2190D672006FC412 /* UIImage+UIColor.swift in Sources */,
 				6E197C092190D672006FC412 /* UIColor+UIImage.swift in Sources */,
 				6E197C082190D672006FC412 /* stringify.swift in Sources */,
