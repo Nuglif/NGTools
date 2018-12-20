@@ -12,7 +12,7 @@ import SystemConfiguration
 /// Detects an available network to perform requests over the internet
 ///
 /// - Returns: true if network is available, false otherwise
-func isNetworkReachable() -> Bool {
+public func isNetworkReachable() -> Bool {
     var zeroAddress = sockaddr()
     zeroAddress.sa_len = UInt8(MemoryLayout<sockaddr>.size)
     zeroAddress.sa_family = sa_family_t(AF_INET)
