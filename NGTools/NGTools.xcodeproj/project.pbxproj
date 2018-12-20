@@ -20,6 +20,7 @@
 		6E197C092190D672006FC412 /* UIColor+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BFF2190D672006FC412 /* UIColor+UIImage.swift */; };
 		6E197C0A2190D672006FC412 /* UIImage+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197C002190D672006FC412 /* UIImage+UIColor.swift */; };
 		6EA14E622194B878005B44F7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA14E612194B878005B44F7 /* Validator.swift */; };
+		D81F22A121CC477200B9382D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F22A021CC477200B9382D /* Reachability.swift */; };
 		D861C39F219225DE009E7E29 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861C39E219225DE009E7E29 /* CacheItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		6E197BFF2190D672006FC412 /* UIColor+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIImage.swift"; sourceTree = "<group>"; };
 		6E197C002190D672006FC412 /* UIImage+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIColor.swift"; sourceTree = "<group>"; };
 		6EA14E612194B878005B44F7 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		D81F22A021CC477200B9382D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D861C39E219225DE009E7E29 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 		6E197BDC2190D663006FC412 /* NGTools */ = {
 			isa = PBXGroup;
 			children = (
+				D81F229E21CC46C700B9382D /* network */,
 				6E197BFB2190D672006FC412 /* Array.swift */,
 				6E197BF52190D672006FC412 /* copyOnWriteValueType.swift */,
 				6E197BF42190D672006FC412 /* curry.swift */,
@@ -133,6 +136,14 @@
 				6E197C002190D672006FC412 /* UIImage+UIColor.swift */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		D81F229E21CC46C700B9382D /* network */ = {
+			isa = PBXGroup;
+			children = (
+				D81F22A021CC477200B9382D /* Reachability.swift */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				6E197C062190D672006FC412 /* memoization.swift in Sources */,
 				6E197C052190D672006FC412 /* JsonLoader.swift in Sources */,
 				D861C39F219225DE009E7E29 /* CacheItem.swift in Sources */,
+				D81F22A121CC477200B9382D /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
