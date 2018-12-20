@@ -4,5 +4,6 @@
         <page name='Index'/>
         <page name='Curry'/>
         <page name='Validator'/>
+        <page name='Network'/>
     </pages>
 </playground>
