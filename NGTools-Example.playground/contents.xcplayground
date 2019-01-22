@@ -5,5 +5,6 @@
         <page name='Curry'/>
         <page name='Validator'/>
         <page name='Network'/>
+        <page name='Swift'/>
     </pages>
 </playground>
