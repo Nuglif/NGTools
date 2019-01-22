@@ -9,10 +9,10 @@
 import Foundation
 
 public extension Dictionary {
-    /// Transform all values of a dictionary into another dictionary with the same keys.
+    /// Transform all values of a dictionary into a new dictionary with the same keys.
     /// Ignore tranformations that lead to a nil value.
     ///
-    /// - Parameter transform: transformation to apply on each keys
+    /// - Parameter transform: transformation to apply on each values
     /// - Returns: new dictionary with non nil values
     /// - Throws: exception thrown by the transformation
     func compactMapValues<T>(_ transform: (Dictionary<Key, Value>.Value) throws -> T?) rethrows -> Dictionary<Dictionary<Key, Value>.Key, T> {
