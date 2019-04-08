@@ -19,7 +19,7 @@ public protocol JsonLoader {
 }
 
 public extension JsonLoader {
-    public func decodeJson<T: Decodable>(decoder: JSONDecoder = JSONDecoder(), for type: T.Type = T.self) -> T? {
+    func decodeJson<T: Decodable>(decoder: JSONDecoder = JSONDecoder(), for type: T.Type = T.self) -> T? {
         var result: T?
         do {
             let data = try JSONSerialization.data(withJSONObject: self, options: [])

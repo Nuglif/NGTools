@@ -23,31 +23,31 @@ public struct JSONCodingKeys: CodingKey {
 
 public extension KeyedDecodingContainer {
 
-    public func decode(_ type: [String: Any].Type, forKey key: K) throws -> [String: Any] {
+    func decode(_ type: [String: Any].Type, forKey key: K) throws -> [String: Any] {
         let container = try nestedContainer(keyedBy: JSONCodingKeys.self, forKey: key)
         return try container.decode(type)
     }
 
-    public func decodeIfPresent(_ type: [String: Any].Type, forKey key: K) throws -> [String: Any]? {
+    func decodeIfPresent(_ type: [String: Any].Type, forKey key: K) throws -> [String: Any]? {
         guard contains(key) else {
             return nil
         }
         return try decode(type, forKey: key)
     }
 
-    public func decode(_ type: [Any].Type, forKey key: K) throws -> [Any] {
+    func decode(_ type: [Any].Type, forKey key: K) throws -> [Any] {
         var container = try nestedUnkeyedContainer(forKey: key)
         return try container.decode(type)
     }
 
-    public func decodeIfPresent(_ type: [Any].Type, forKey key: K) throws -> [Any]? {
+    func decodeIfPresent(_ type: [Any].Type, forKey key: K) throws -> [Any]? {
         guard contains(key) else {
             return nil
         }
         return try decode(type, forKey: key)
     }
 
-    public func decode(_ type: [String: Any].Type) throws -> [String: Any] {
+    func decode(_ type: [String: Any].Type) throws -> [String: Any] {
         var dictionary = [String: Any]()
 
         for key in allKeys {
