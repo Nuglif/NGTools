@@ -23,7 +23,7 @@ public protocol Validator {
 }
 
 public extension Validator {
-    public func validate(untrusted: Untrusted<T>) -> T? {
+    func validate(untrusted: Untrusted<T>) -> T? {
         return self.isValid(value: untrusted.value) ? untrusted.value : nil
     }
 }
