@@ -9,13 +9,13 @@
 import UIKit
 
 public extension UIColor {
-    public static let cachedImage = cached(imageWrp)
+    static let cachedImage = cached(imageWrp)
 
-    public func image() -> UIImage? {
+    func image() -> UIImage? {
         return image(size: CGSize(width: 1.0, height: 1.0))
     }
 
-    public func image(size: CGSize) -> UIImage? {
+    func image(size: CGSize) -> UIImage? {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()

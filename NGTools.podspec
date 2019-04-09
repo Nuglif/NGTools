@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NGTools'
-  s.version          = '0.1.4'
+  s.version          = '1.0'
   s.summary          = 'Tools used by Nuglif\'s ios team'
 
   s.description      = <<-DESC
@@ -13,7 +13,7 @@ This a collection of our differents helpers functions which does not belongs to 
   s.source           = { :git => 'https://github.com/nuglif/ngtools.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.2'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.source_files = 'NGTools/NGTools/**/*.{swift}'
 
 end

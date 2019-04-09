@@ -9,9 +9,13 @@
 
  ## Index:
 
+ - [Swift](Swift) extensions of standard types
+ 
  - [Validator](Validator) operator, allows for factoring out repeated Observable chain transformations
 
  - [Curry](Curry) high level functions, allows to break down functions that take several arguments in a series of functions that manage a single argument.
+
+ - [Network](Network) Helpers to play with network capacities.
  */
 
 //: [Next >>](@next)
