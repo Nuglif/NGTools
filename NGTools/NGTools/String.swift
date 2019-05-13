@@ -45,3 +45,17 @@ public extension String {
         return trimmingCharacters(in: CharacterSet.whitespaces).count == 0
     }
 }
+
+public extension NSString {
+    @objc func md5() -> NSString? {
+        return (self as String).md5 as NSString?
+    }
+
+    @objc func sha1() -> NSString? {
+        return (self as String).sha1 as NSString?
+    }
+
+    @objc func isEmptyOrContainsOnlyWhitespaces() -> Bool {
+        return (self as String).isEmptyOrContainsOnlyWhitespaces
+    }
+}
