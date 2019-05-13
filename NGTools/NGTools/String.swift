@@ -13,8 +13,8 @@ import func CommonCrypto.CC_MD5
 import func CommonCrypto.CC_SHA1
 import typealias CommonCrypto.CC_LONG
 
-extension String {
-    public var md5: String? {
+public extension String {
+    var md5: String? {
         let length = Int(CC_MD5_DIGEST_LENGTH)
         let messageData = self.data(using:.utf8)!
         var digestData = Data(count: length)
@@ -31,7 +31,7 @@ extension String {
         return String(data: digestData, encoding: .utf8)
     }
 
-    public var sha1: String {
+    var sha1: String {
         let data = Data(self.utf8)
         var digest = [UInt8](repeating: 0, count:Int(CC_SHA1_DIGEST_LENGTH))
         data.withUnsafeBytes {
@@ -39,5 +39,9 @@ extension String {
         }
         let hexBytes = digest.map { String(format: "%02hhx", $0) }
         return hexBytes.joined()
+    }
+
+    var isEmptyOrContainsOnlyWhitespaces: Bool {
+        return trimmingCharacters(in: CharacterSet.whitespaces).count == 0
     }
 }
