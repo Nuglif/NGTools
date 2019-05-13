@@ -44,6 +44,12 @@ public extension String {
     var isEmptyOrContainsOnlyWhitespaces: Bool {
         return trimmingCharacters(in: CharacterSet.whitespaces).count == 0
     }
+
+    var URLEncodedString: String? {
+        let queryKVSet = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[]").inverted
+
+        return addingPercentEncoding(withAllowedCharacters: queryKVSet)
+    }
 }
 
 public extension NSString {
@@ -57,5 +63,9 @@ public extension NSString {
 
     @objc func isEmptyOrContainsOnlyWhitespaces() -> Bool {
         return (self as String).isEmptyOrContainsOnlyWhitespaces
+    }
+
+    @objc func URLEncodedString() -> NSString? {
+        return (self as String).URLEncodedString as NSString?
     }
 }
