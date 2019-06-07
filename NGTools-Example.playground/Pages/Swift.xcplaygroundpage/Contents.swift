@@ -1,6 +1,7 @@
 //: [Previous](@previous)
 
 import Foundation
+import UIKit
 import NGTools
 
 let stringToHash = "My favorite ice cream flavor is praline."
@@ -22,4 +23,6 @@ if let sha1 = sha1,
     print("sha1 of 'My favorite ice cream flavor is praline.' should be '89704cf3ee460c504c622991b9f3086d03526f9b' but was '\(sha1)': KO !")
 }
 
+let plateformIdentifier = UIDevice.current.platformIdentifier
+print("Plateform identifier is \(platformIdentifier)")
 //: [Next](@next)
