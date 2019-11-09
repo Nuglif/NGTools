@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double NGToolsVersionNumber;
 FOUNDATION_EXPORT const unsigned char NGToolsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <NGTools/PublicHeader.h>
-
-
