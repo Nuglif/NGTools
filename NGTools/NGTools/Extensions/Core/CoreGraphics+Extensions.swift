@@ -34,6 +34,10 @@ public extension CGFloat {
         return Darwin.round(self)
     }
 
+    func percentage() -> CGFloat {
+        return Darwin.round(self * 100) / 100
+    }
+
     static func interpolate(startValue: CGFloat, endValue: CGFloat, progress: CGFloat) -> CGFloat {
         return startValue + ((endValue - startValue) * progress)
     }
