@@ -11,6 +11,17 @@ import CommonCrypto
 
 public extension String {
 
+    var sha1: String? { return data(using: .utf8)?.sha1() }
+    var md5: String? { return data(using: .utf8)?.md5() }
+    var sha256: String? { return data(using: .utf8)?.sha256() }
+    var isEmptyOrContainsOnlyWhitespaces: Bool { return trimmingCharacters(in: CharacterSet.whitespaces).count == 0 }
+
+    var URLEncodedString: String? {
+        let queryKVSet = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[]").inverted
+
+        return addingPercentEncoding(withAllowedCharacters: queryKVSet)
+    }
+
     static func * (lhs: String, rhs: Int) -> String {
         guard rhs > 0 else { return "" }
 
@@ -28,18 +39,6 @@ public extension String {
 
         return data.base64EncodedString()
     }
-
-    func sha1() -> String? {
-        return data(using: .utf8)?.sha1()
-    }
-
-    func md5() -> String? {
-        return data(using: .utf8)?.md5()
-    }
-
-	func sha256() -> String? {
-		return data(using: .utf8)?.sha256()
-	}
 
 	static func randomNonce(length: Int = 32) -> String {
 		precondition(length > 0)
@@ -81,5 +80,24 @@ public extension String {
         let currentCharacter = self[currentCharacterIndex]
 
         return currentCharacter.unicodeScalars.allSatisfy { !charSet.contains($0) }
+    }
+}
+
+public extension NSString {
+
+    @objc func md5() -> NSString {
+        return ((self as String).md5 ?? "") as NSString
+    }
+
+    @objc func sha1() -> NSString {
+        return ((self as String).sha1 ?? "") as NSString
+    }
+
+    @objc func isEmptyOrContainsOnlyWhitespaces() -> Bool {
+        return (self as String).isEmptyOrContainsOnlyWhitespaces
+    }
+
+    @objc func URLEncodedString() -> NSString? {
+        return (self as String).URLEncodedString as NSString?
     }
 }
