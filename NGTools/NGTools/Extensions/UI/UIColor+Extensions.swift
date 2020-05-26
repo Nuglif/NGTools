@@ -10,9 +10,12 @@ import UIKit
 
 public extension UIColor {
 
-    convenience init(hex string: String) {
-        let RGBA = Color.rgba(from: string)
+    convenience init(hex string: String, alpha: CGFloat = 1) {
+        let RGBA = Color.rgba(from: string, alpha: alpha)
 
-        self.init(red: CGFloat(RGBA.red), green: CGFloat(RGBA.green), blue: CGFloat(RGBA.blue), alpha: CGFloat(RGBA.alpha))
+        self.init(red: CGFloat(RGBA.red),
+                  green: CGFloat(RGBA.green),
+                  blue: CGFloat(RGBA.blue),
+                  alpha: CGFloat(RGBA.alpha))
     }
 }

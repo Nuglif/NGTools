@@ -13,25 +13,27 @@ public struct Color {
     public var rgba: RGBA
     public typealias RGBA = (red: Float, green: Float, blue: Float, alpha: Float)
 
-    public static func rgba(from hex: String) -> RGBA {
+    public static func rgba(from hex: String, alpha: CGFloat = 1) -> RGBA {
         let hexCode = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
 
         var int = UInt32()
+        var effectiveAlpha = alpha
         Scanner(string: hexCode).scanHexInt32(&int)
 
-        let r, g, b, a: UInt32
+        let r, g, b: UInt32
         switch hexCode.count {
         case 3: // RGB (12-bit)
-            (r, g, b, a) = ((int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17, 255)
+            (r, g, b) = ((int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
         case 6: // RGB (24-bit)
-            (r, g, b, a) = (int >> 16, int >> 8 & 0xFF, int & 0xFF, 255)
+            (r, g, b) = (int >> 16, int >> 8 & 0xFF, int & 0xFF)
         case 8: // RGBA (32-bit)
-            (r, g, b, a) = (int >> 24 & 0xFF, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+            (r, g, b) = (int >> 24 & 0xFF, int >> 16 & 0xFF, int >> 8 & 0xFF)
+            effectiveAlpha = CGFloat(int & 0xFF) / 255
         default:
-            (r, g, b, a) = (0, 0, 0, 255)
+            (r, g, b) = (0, 0, 0)
         }
 
-        return RGBA(red: Float(r)/255, green: Float(g)/255, blue: Float(b)/255, alpha: Float(a)/255)
+        return RGBA(red: Float(r)/255, green: Float(g)/255, blue: Float(b)/255, alpha: Float(effectiveAlpha))
     }
 
     public init(red: Float, green: Float, blue: Float, alpha: Float = 1) {
@@ -42,8 +44,8 @@ public struct Color {
         rgba = RGBA(red: clamp(red), green: clamp(green), blue: clamp(blue), alpha: clamp(alpha))
     }
 
-    public init(hex: String) {
-        rgba = Color.rgba(from: hex)
+    public init(hex: String, alpha: CGFloat = 1) {
+        rgba = Color.rgba(from: hex, alpha: alpha)
     }
 
     public func toHex() -> String {
