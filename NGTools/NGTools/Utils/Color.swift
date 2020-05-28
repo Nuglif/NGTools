@@ -10,14 +10,21 @@ import UIKit
 
 public struct Color {
 
-    public var rgba: RGBA
-    public typealias RGBA = (red: Float, green: Float, blue: Float, alpha: Float)
+    public typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
 
-    public static func rgba(from hex: String, alpha: CGFloat = 1) -> RGBA {
+    public var rgba: RGBA
+
+    var red: CGFloat { rgba.red }
+    var green: CGFloat { rgba.green }
+    var blue: CGFloat { rgba.blue }
+    var alpha: CGFloat { rgba.alpha }
+
+    public init(hex: String, alpha: CGFloat = 1) {
         let hexCode = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
 
         var int = UInt32()
         var effectiveAlpha = alpha
+
         Scanner(string: hexCode).scanHexInt32(&int)
 
         let r, g, b: UInt32
@@ -33,36 +40,26 @@ public struct Color {
             (r, g, b) = (0, 0, 0)
         }
 
-        return RGBA(red: Float(r)/255, green: Float(g)/255, blue: Float(b)/255, alpha: Float(effectiveAlpha))
+        self.rgba = RGBA(red: CGFloat(r)/255, green: CGFloat(g)/255, blue: CGFloat(b)/255, alpha: CGFloat(effectiveAlpha))
     }
 
-    public init(red: Float, green: Float, blue: Float, alpha: Float = 1) {
-        func clamp(_ value: Float) -> Float {
+    public init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1) {
+        func clamp(_ value: CGFloat) -> CGFloat {
             return min(1, max(0, value))
         }
 
         rgba = RGBA(red: clamp(red), green: clamp(green), blue: clamp(blue), alpha: clamp(alpha))
     }
 
-    public init(hex: String, alpha: CGFloat = 1) {
-        rgba = Color.rgba(from: hex, alpha: alpha)
-    }
-
     public func toHex() -> String {
-        return String(format: "%02X%02X%02X%02X", Int(rgba.red * 255), Int(rgba.green * 255), Int(rgba.blue * 255), Int(rgba.alpha * 255))
+        return String(format: "%02X%02X%02X%02X", Int(red * 255), Int(green * 255), Int(blue * 255), Int(alpha * 255))
     }
 }
 
 public extension Color {
 
-    var systemColor: UIColor {
-        return UIColor(cgColor: cgColor)
-    }
-
-    var cgColor: CGColor {
-        return CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(),
-                       components: [CGFloat(rgba.red), CGFloat(rgba.green), CGFloat(rgba.blue), CGFloat(rgba.alpha)])!
-    }
+    var systemColor: UIColor { UIColor(cgColor: cgColor) }
+    var cgColor: CGColor { CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [red, green, blue, alpha])! }
 }
 
 extension Color: Codable {
@@ -71,7 +68,7 @@ extension Color: Codable {
         let container = try decoder.singleValueContainer()
         let hex = try container.decode(String.self)
 
-        self.rgba = Color.rgba(from: hex)
+        self.init(hex: hex)
     }
 
     public func encode(to encoder: Encoder) throws {

@@ -11,10 +11,10 @@ import CommonCrypto
 
 public extension String {
 
-    var sha1: String? { return data(using: .utf8)?.sha1() }
-    var md5: String? { return data(using: .utf8)?.md5() }
-    var sha256: String? { return data(using: .utf8)?.sha256() }
-    var isEmptyOrContainsOnlyWhitespaces: Bool { return trimmingCharacters(in: CharacterSet.whitespaces).count == 0 }
+    var sha1: String? { data(using: .utf8)?.sha1 }
+    var md5: String? { data(using: .utf8)?.md5 }
+    var sha256: String? { data(using: .utf8)?.sha256 }
+    var isEmptyOrContainsOnlyWhitespaces: Bool { trimmingCharacters(in: CharacterSet.whitespaces).count == 0 }
 
     var URLEncodedString: String? {
         let queryKVSet = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[]").inverted

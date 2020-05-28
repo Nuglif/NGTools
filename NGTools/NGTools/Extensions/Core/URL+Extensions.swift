@@ -10,13 +10,9 @@ import Foundation
 
 public extension URL {
 
-    func base64EncodedString() -> String {
-        return dataRepresentation.base64EncodedString()
-    }
+    var sha1: String { dataRepresentation.sha1 }
 
-    func sha1() -> String? {
-        return dataRepresentation.sha1()
-    }
+    func base64EncodedString() -> String { dataRepresentation.base64EncodedString() }
 
     func appendingScheme(defaultScheme: String = "http") -> URL {
         guard scheme == nil else { return self }

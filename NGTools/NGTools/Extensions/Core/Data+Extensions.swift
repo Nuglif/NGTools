@@ -11,7 +11,7 @@ import CommonCrypto
 
 public extension Data {
 
-    func sha1() -> String {
+    var sha1: String {
         let digest: [UInt8] = withUnsafeBytes {
             var digest = [UInt8](repeating: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
 
@@ -25,7 +25,7 @@ public extension Data {
             .joined()
     }
 
-    func md5() -> String {
+    var md5: String {
         let digest: [UInt8] = withUnsafeBytes {
             var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
 
@@ -39,7 +39,7 @@ public extension Data {
             .joined()
     }
 
-	func sha256() -> String {
+    var sha256: String {
 		let digest: [UInt8] = withUnsafeBytes {
 			var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
 
