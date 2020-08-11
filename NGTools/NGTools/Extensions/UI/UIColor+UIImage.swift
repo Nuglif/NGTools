@@ -11,7 +11,7 @@ import UIKit
 public extension UIColor {
     static let cachedImage = cached(imageWrp)
 
-    func image() -> UIImage? {
+    @objc func image() -> UIImage? {
         return image(size: CGSize(width: 1.0, height: 1.0))
     }
 
