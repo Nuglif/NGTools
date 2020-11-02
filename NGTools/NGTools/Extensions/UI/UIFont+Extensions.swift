@@ -18,11 +18,42 @@ public extension UIFont {
         }
     }
 
-    static func customFont(for fontName: String?, size: CGFloat) -> UIFont {
-        if let fontName = fontName, let font = UIFont(name: fontName, size: size) {
+    static func customFont(for fontName: String?, size: CGFloat, fallbackFont: UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)) -> UIFont {
+        let defaultFont = fallbackFont.withSize(size)
+
+        guard let fontName = fontName else { return defaultFont }
+
+        if let font = UIFont(name: fontName, size: size) {
             return font
         }
 
-        return UIFont.systemFont(ofSize: size)
+        do {
+            try loadFont(for: fontName)
+            return UIFont(name: fontName, size: size) ?? defaultFont
+        } catch {
+            return defaultFont
+        }
+    }
+}
+
+// MARK: - UIFont (Private)
+private extension UIFont {
+
+    enum FontError: Error {
+        case notFound
+        case notLoaded
+    }
+
+    static func loadFont(for fontName: String) throws {
+        let bundle = Bundle.main
+
+        guard let fileUrl = bundle.url(forResource: fontName, withExtension: "otf") else { throw(FontError.notFound) }
+        guard let data = NSData(contentsOf: fileUrl),
+              let provider = CGDataProvider(data: data),
+              let font = CGFont(provider) else {
+            throw(FontError.notLoaded)
+        }
+
+        CTFontManagerRegisterGraphicsFont(font, nil)
     }
 }
