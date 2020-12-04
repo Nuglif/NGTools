@@ -16,10 +16,10 @@ public extension String {
     var sha256: String? { data(using: .utf8)?.sha256 }
     var isEmptyOrContainsOnlyWhitespaces: Bool { trimmingCharacters(in: CharacterSet.whitespaces).count == 0 }
 
-    var URLEncodedString: String? {
-        let queryKVSet = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[]").inverted
+    var urlEncoded: String? {
+        let characters = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted
 
-        return addingPercentEncoding(withAllowedCharacters: queryKVSet)
+        return addingPercentEncoding(withAllowedCharacters: characters)
     }
 
     static func * (lhs: String, rhs: Int) -> String {
@@ -98,6 +98,6 @@ public extension NSString {
     }
 
     @objc func URLEncodedString() -> NSString? {
-        return (self as String).URLEncodedString as NSString?
+        return (self as String).urlEncoded as NSString?
     }
 }
