@@ -10,5 +10,5 @@ import Foundation
 
 public extension IndexPath {
 
-    static let first = IndexPath(item: 0, section: 0)
+    static var first: IndexPath { .init(item: 0, section: 0) }
 }

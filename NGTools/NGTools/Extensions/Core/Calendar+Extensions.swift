@@ -13,7 +13,7 @@ public extension Calendar {
 	static var hourTimeInterval: TimeInterval { return 3600 }
     static var minuteTimeInterval: TimeInterval { return 60 }
 
-    private var now: Date { return TimeProvider.now() }
+    private var now: Date { TimeProvider.now() }
 
     func isToday(of date: Date) -> Bool {
         return isDate(date, inSameDayAs: now)

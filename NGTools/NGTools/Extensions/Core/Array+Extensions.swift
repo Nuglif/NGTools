@@ -21,4 +21,8 @@ public extension Array {
 
         lhs.append(contentsOf: elements)
     }
+
+    subscript (safe index: Int) -> Element? {
+        return indices ~= index ? self[index] : nil
+    }
 }

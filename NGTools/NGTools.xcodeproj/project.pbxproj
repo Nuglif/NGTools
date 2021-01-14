@@ -15,11 +15,12 @@
 		6E197C042190D672006FC412 /* FailableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BF82190D672006FC412 /* FailableDecodable.swift */; };
 		6E197C052190D672006FC412 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BF92190D672006FC412 /* JsonLoader.swift */; };
 		6E197C062190D672006FC412 /* memoization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BFA2190D672006FC412 /* memoization.swift */; };
-		6E197C072190D672006FC412 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BFB2190D672006FC412 /* Array.swift */; };
 		6E197C082190D672006FC412 /* stringify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BFD2190D672006FC412 /* stringify.swift */; };
 		6E197C092190D672006FC412 /* UIColor+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197BFF2190D672006FC412 /* UIColor+UIImage.swift */; };
 		6E197C0A2190D672006FC412 /* UIImage+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E197C002190D672006FC412 /* UIImage+UIColor.swift */; };
 		6EA14E622194B878005B44F7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA14E612194B878005B44F7 /* Validator.swift */; };
+		A4F6354225B0906A0005D4BE /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F6354125B0906A0005D4BE /* UIDevice+Extensions.swift */; };
+		A4F6354A25B094600005D4BE /* UrlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F6354925B094600005D4BE /* UrlTests.swift */; };
 		CD140344245A66850091D1A5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD140343245A66850091D1A5 /* UIColor+Extensions.swift */; };
 		CD140346245A67180091D1A5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD140345245A67180091D1A5 /* Color.swift */; };
 		CD140350245A68BE0091D1A5 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14034F245A68BE0091D1A5 /* UIFont+Extensions.swift */; };
@@ -36,7 +37,6 @@
 		CD82B091246A3EEA00F3D080 /* ConvenienceMathOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD82B090246A3EEA00F3D080 /* ConvenienceMathOperators.swift */; };
 		D81F22A121CC477200B9382D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81F22A021CC477200B9382D /* Reachability.swift */; };
 		D861C39F219225DE009E7E29 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861C39E219225DE009E7E29 /* CacheItem.swift */; };
-		D8C40DC022AAD50F0049F329 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C40DBF22AAD50F0049F329 /* UIDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,11 +61,12 @@
 		6E197BF82190D672006FC412 /* FailableDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailableDecodable.swift; sourceTree = "<group>"; };
 		6E197BF92190D672006FC412 /* JsonLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 		6E197BFA2190D672006FC412 /* memoization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memoization.swift; sourceTree = "<group>"; };
-		6E197BFB2190D672006FC412 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		6E197BFD2190D672006FC412 /* stringify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stringify.swift; sourceTree = "<group>"; };
 		6E197BFF2190D672006FC412 /* UIColor+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIImage.swift"; sourceTree = "<group>"; };
 		6E197C002190D672006FC412 /* UIImage+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIColor.swift"; sourceTree = "<group>"; };
 		6EA14E612194B878005B44F7 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		A4F6354125B0906A0005D4BE /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		A4F6354925B094600005D4BE /* UrlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlTests.swift; sourceTree = "<group>"; };
 		CD140343245A66850091D1A5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		CD140345245A67180091D1A5 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		CD14034F245A68BE0091D1A5 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		CD82B090246A3EEA00F3D080 /* ConvenienceMathOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceMathOperators.swift; sourceTree = "<group>"; };
 		D81F22A021CC477200B9382D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D861C39E219225DE009E7E29 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
-		D8C40DBF22AAD50F0049F329 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				6E197BEA2190D664006FC412 /* Info.plist */,
+				A4F6354925B094600005D4BE /* UrlTests.swift */,
 			);
 			path = NGToolsTests;
 			sourceTree = "<group>";
@@ -167,6 +168,8 @@
 				CD140343245A66850091D1A5 /* UIColor+Extensions.swift */,
 				6E197BFF2190D672006FC412 /* UIColor+UIImage.swift */,
 				CD14049D245B75AF0091D1A5 /* UIControl+Extensions.swift */,
+				A4F6354125B0906A0005D4BE /* UIDevice+Extensions.swift */,
+				CD55C3772459B145003ECF77 /* UIEdgeInsets+Extensions.swift */,
 				CD14034F245A68BE0091D1A5 /* UIFont+Extensions.swift */,
 				6E197C002190D672006FC412 /* UIImage+UIColor.swift */,
 			);
@@ -183,7 +186,6 @@
 				CD1404E7245BB8C90091D1A5 /* IndexPath+Extensions.swift */,
 				CD55C3762459B145003ECF77 /* NSDirectionalEdgeInsets+Extensions.swift */,
 				CD55C3782459B145003ECF77 /* String+Extensions.swift */,
-				CD55C3772459B145003ECF77 /* UIEdgeInsets+Extensions.swift */,
 				CD55C38E2459B4FC003ECF77 /* URL+Extensions.swift */,
 			);
 			path = Core;
@@ -192,7 +194,6 @@
 		D81F229E21CC46C700B9382D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				6E197BFB2190D672006FC412 /* Array.swift */,
 				D861C39E219225DE009E7E29 /* CacheItem.swift */,
 				CD140345245A67180091D1A5 /* Color.swift */,
 				CD82B090246A3EEA00F3D080 /* ConvenienceMathOperators.swift */,
@@ -201,7 +202,6 @@
 				6E197BFA2190D672006FC412 /* memoization.swift */,
 				D81F22A021CC477200B9382D /* Reachability.swift */,
 				6E197BFD2190D672006FC412 /* stringify.swift */,
-				D8C40DBF22AAD50F0049F329 /* UIDevice.swift */,
 				6EA14E612194B878005B44F7 /* Validator.swift */,
 			);
 			path = Utils;
@@ -273,6 +273,7 @@
 					};
 					6E197BE22190D664006FC412 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -319,7 +320,6 @@
 			files = (
 				6E197C032190D672006FC412 /* AnyDecodable.swift in Sources */,
 				6E197C042190D672006FC412 /* FailableDecodable.swift in Sources */,
-				6E197C072190D672006FC412 /* Array.swift in Sources */,
 				6E197C012190D672006FC412 /* curry.swift in Sources */,
 				6EA14E622194B878005B44F7 /* Validator.swift in Sources */,
 				CD55C37C2459B145003ECF77 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
@@ -331,10 +331,10 @@
 				CD55C38F2459B4FC003ECF77 /* URL+Extensions.swift in Sources */,
 				6E197C0A2190D672006FC412 /* UIImage+UIColor.swift in Sources */,
 				CD55C4952459F6AC003ECF77 /* CoreGraphics+Extensions.swift in Sources */,
+				A4F6354225B0906A0005D4BE /* UIDevice+Extensions.swift in Sources */,
 				6E197C092190D672006FC412 /* UIColor+UIImage.swift in Sources */,
 				CD55C36A2459AFF0003ECF77 /* Array+Extensions.swift in Sources */,
 				6E197C082190D672006FC412 /* stringify.swift in Sources */,
-				D8C40DC022AAD50F0049F329 /* UIDevice.swift in Sources */,
 				6E197C062190D672006FC412 /* memoization.swift in Sources */,
 				CD55C37E2459B145003ECF77 /* String+Extensions.swift in Sources */,
 				CD140346245A67180091D1A5 /* Color.swift in Sources */,
@@ -352,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4F6354A25B094600005D4BE /* UrlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +508,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuglif.NGTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -537,6 +539,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nuglif.NGTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -551,6 +554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z45WA4MSEP;
 				INFOPLIST_FILE = NGToolsTests/Info.plist;
@@ -561,6 +565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ca.entreprise.NGToolsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -570,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z45WA4MSEP;
 				INFOPLIST_FILE = NGToolsTests/Info.plist;
