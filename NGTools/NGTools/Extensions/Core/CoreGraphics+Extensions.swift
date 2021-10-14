@@ -58,9 +58,7 @@ public extension CGFloat {
 
 public extension CGPoint {
 
-    var isInfinite: Bool {
-        return x.isInfinite || y.isInfinite
-    }
+    var isInfinite: Bool { x.isInfinite || y.isInfinite }
 
     static func ceil(x: CGFloat, y: CGFloat) -> CGPoint {
         return .init(x: x.ceil(), y: y.ceil())
@@ -125,14 +123,16 @@ public extension CGSize {
 
 public extension CGRect {
 
-    var topRight: CGPoint { return .init(x: maxX, y: minY) }
-    var topLeft: CGPoint { return .init(x: minX, y: minY) }
+    var topRight: CGPoint { .init(x: maxX, y: minY) }
+    var topLeft: CGPoint { .init(x: minX, y: minY) }
 
-    var midLeft: CGPoint { return .init(x: minX, y: midY) }
-    var midRight: CGPoint { return .init(x: maxX, y: midY) }
+    var midLeft: CGPoint { .init(x: minX, y: midY) }
+    var midRight: CGPoint { .init(x: maxX, y: midY) }
 
-    var bottomRight: CGPoint { return .init(x: maxX, y: maxY) }
-    var bottomLeft: CGPoint { return .init(x: minX, y: maxY) }
+    var bottomRight: CGPoint { .init(x: maxX, y: maxY) }
+    var bottomLeft: CGPoint { .init(x: minX, y: maxY) }
+
+    var center: CGPoint { .init(x: midX, y: midY) }
 
     static func ceil(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> CGRect {
         return .init(x: x.ceil(), y: y.ceil(), width: width.ceil(), height: height.ceil())
