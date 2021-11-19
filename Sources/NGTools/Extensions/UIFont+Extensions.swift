@@ -11,7 +11,7 @@ import UIKit
 public extension UIFont {
 
     var dynamicTypeFont: UIFont {
-        if #available(iOSApplicationExtension 11.0, *) {
+        if #available(iOS 11.0, *) {
             return UIFontMetrics.default.scaledFont(for: self)
         } else {
             return self

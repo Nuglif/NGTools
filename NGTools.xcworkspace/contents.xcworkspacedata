@@ -5,6 +5,6 @@
       location = "group:NGTools-Example.playground">
    </FileRef>
    <FileRef
-      location = "container:NGTools/NGTools.xcodeproj">
+      location = "container:NGTools.xcodeproj">
    </FileRef>
 </Workspace>
