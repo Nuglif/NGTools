@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F71414A27BF583400CD8F6E /* DataExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */; };
 		A41934FF26EA36C900008E4B /* NGTools.h in Headers */ = {isa = PBXBuildFile; fileRef = A42157B926EA34CA008C21D2 /* NGTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A42157A526EA3470008C21D2 /* NGTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421579C26EA3470008C21D2 /* NGTools.framework */; };
 		A42157DF26EA34CA008C21D2 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BB26EA34CA008C21D2 /* curry.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensionTests.swift; sourceTree = "<group>"; };
 		A421579C26EA3470008C21D2 /* NGTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NGTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42157A426EA3470008C21D2 /* NGToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NGToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42157B426EA34CA008C21D2 /* UrlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlTests.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		A42157B326EA34CA008C21D2 /* NGToolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */,
 				A42157B426EA34CA008C21D2 /* UrlTests.swift */,
 				A42157B526EA34CA008C21D2 /* UserDefaultsPersistanceTests.swift */,
 				A42157B726EA34CA008C21D2 /* Info.plist */,
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42157FE26EA34DE008C21D2 /* UserDefaultsPersistanceTests.swift in Sources */,
+				9F71414A27BF583400CD8F6E /* DataExtensionTests.swift in Sources */,
 				A42157FD26EA34DE008C21D2 /* UrlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
