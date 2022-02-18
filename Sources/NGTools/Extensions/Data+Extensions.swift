@@ -52,4 +52,9 @@ public extension Data {
 			String(format: "%02x", $0)
 		}.joined()
 	}
+
+    func toHexadecimal() -> String {
+        return reduce("", { $0 + String(format: "%02X", $1) })
+            .lowercased()
+    }
 }
