@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9F71414A27BF583400CD8F6E /* DataExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */; };
 		A41934FF26EA36C900008E4B /* NGTools.h in Headers */ = {isa = PBXBuildFile; fileRef = A42157B926EA34CA008C21D2 /* NGTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A42157A526EA3470008C21D2 /* NGTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421579C26EA3470008C21D2 /* NGTools.framework */; };
 		A42157DF26EA34CA008C21D2 /* curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BB26EA34CA008C21D2 /* curry.swift */; };
 		A42157E026EA34CA008C21D2 /* PersistanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BC26EA34CA008C21D2 /* PersistanceStrategy.swift */; };
 		A42157E126EA34CA008C21D2 /* stringify.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BD26EA34CA008C21D2 /* stringify.swift */; };
@@ -41,6 +40,13 @@
 		A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157D426EA34CA008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift */; };
 		A421580D26EA350F008C21D2 /* UIEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157CE26EA34CA008C21D2 /* UIEdgeInsets+Extensions.swift */; };
 		A421580E26EA350F008C21D2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157CD26EA34CA008C21D2 /* String+Extensions.swift */; };
+		A494C0B327C40E9700EA0C37 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A494C0B227C40E9700EA0C37 /* RxSwift.framework */; platformFilter = ios; };
+		A494C0B827C40EC700EA0C37 /* MigrationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494C0B627C40EC700EA0C37 /* MigrationStore.swift */; };
+		A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494C0B727C40EC700EA0C37 /* MigrationTaskState.swift */; };
+		A494C0BC27C40EE700EA0C37 /* MigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494C0BA27C40ED700EA0C37 /* MigrationTests.swift */; };
+		A494C0BF27C411E000EA0C37 /* NGTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421579C26EA3470008C21D2 /* NGTools.framework */; };
+		A4C75F4D27BED95600F752A3 /* MigrationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4C27BED95600F752A3 /* MigrationTask.swift */; };
+		A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +97,12 @@
 		A42157D726EA34CA008C21D2 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		A42157D826EA34CA008C21D2 /* UIImage+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIColor.swift"; sourceTree = "<group>"; };
 		A42157D926EA34CA008C21D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A494C0B227C40E9700EA0C37 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		A494C0B627C40EC700EA0C37 /* MigrationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationStore.swift; sourceTree = "<group>"; };
+		A494C0B727C40EC700EA0C37 /* MigrationTaskState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationTaskState.swift; sourceTree = "<group>"; };
+		A494C0BA27C40ED700EA0C37 /* MigrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationTests.swift; sourceTree = "<group>"; };
+		A4C75F4C27BED95600F752A3 /* MigrationTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationTask.swift; sourceTree = "<group>"; };
+		A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationRunner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A494C0B327C40E9700EA0C37 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A42157A526EA3470008C21D2 /* NGTools.framework in Frameworks */,
+				A494C0BF27C411E000EA0C37 /* NGTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +131,7 @@
 				A42157B826EA34CA008C21D2 /* NGTools */,
 				A42157B326EA34CA008C21D2 /* NGToolsTests */,
 				6E197BDB2190D663006FC412 /* Products */,
+				A494C0B127C40E9700EA0C37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */,
+				A494C0BA27C40ED700EA0C37 /* MigrationTests.swift */,
 				A42157B426EA34CA008C21D2 /* UrlTests.swift */,
 				A42157B526EA34CA008C21D2 /* UserDefaultsPersistanceTests.swift */,
 				A42157B726EA34CA008C21D2 /* Info.plist */,
@@ -157,6 +172,7 @@
 		A42157BA26EA34CA008C21D2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4C75F4E27BED95B00F752A3 /* Migration */,
 				A42157BB26EA34CA008C21D2 /* curry.swift */,
 				A42157BC26EA34CA008C21D2 /* PersistanceStrategy.swift */,
 				A42157BD26EA34CA008C21D2 /* stringify.swift */,
@@ -197,6 +213,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A494C0B127C40E9700EA0C37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A494C0B227C40E9700EA0C37 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4C75F4E27BED95B00F752A3 /* Migration */ = {
+			isa = PBXGroup;
+			children = (
+				A4C75F4C27BED95600F752A3 /* MigrationTask.swift */,
+				A494C0B727C40EC700EA0C37 /* MigrationTaskState.swift */,
+				A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */,
+				A494C0B627C40EC700EA0C37 /* MigrationStore.swift */,
+			);
+			path = Migration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -219,6 +254,7 @@
 				A421579826EA3470008C21D2 /* Sources */,
 				A421579926EA3470008C21D2 /* Frameworks */,
 				A421579A26EA3470008C21D2 /* Resources */,
+				A494C0C227C4124E00EA0C37 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -236,6 +272,7 @@
 				A42157A026EA3470008C21D2 /* Sources */,
 				A42157A126EA3470008C21D2 /* Frameworks */,
 				A42157A226EA3470008C21D2 /* Resources */,
+				A494C0C327C4133F00EA0C37 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,6 +338,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A494C0C227C4124E00EA0C37 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		A494C0C327C4133F00EA0C37 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A421579826EA3470008C21D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -312,6 +391,7 @@
 				A42157E826EA34CA008C21D2 /* UserDefaultsPersistanceStrategy.swift in Sources */,
 				A42157E326EA34CA008C21D2 /* AnyDecodable.swift in Sources */,
 				A42157E426EA34CA008C21D2 /* ConvenienceMathOperators.swift in Sources */,
+				A494C0B827C40EC700EA0C37 /* MigrationStore.swift in Sources */,
 				A42157EC26EA34CA008C21D2 /* Color.swift in Sources */,
 				A421580126EA350F008C21D2 /* IndexPath+Extensions.swift in Sources */,
 				A42157E526EA34CA008C21D2 /* JsonLoader.swift in Sources */,
@@ -320,6 +400,7 @@
 				A421580426EA350F008C21D2 /* UIColor+Extensions.swift in Sources */,
 				A42157E226EA34CA008C21D2 /* CacheItem.swift in Sources */,
 				A421580726EA350F008C21D2 /* UIFont+Extensions.swift in Sources */,
+				A4C75F4D27BED95600F752A3 /* MigrationTask.swift in Sources */,
 				A42157E726EA34CA008C21D2 /* copyOnWriteValueType.swift in Sources */,
 				A42157E026EA34CA008C21D2 /* PersistanceStrategy.swift in Sources */,
 				A421580D26EA350F008C21D2 /* UIEdgeInsets+Extensions.swift in Sources */,
@@ -332,7 +413,9 @@
 				A421580026EA350F008C21D2 /* UIControl+Extensions.swift in Sources */,
 				A421580E26EA350F008C21D2 /* String+Extensions.swift in Sources */,
 				A421580526EA350F008C21D2 /* URL+Extensions.swift in Sources */,
+				A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */,
 				A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
+				A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */,
 				A42157E126EA34CA008C21D2 /* stringify.swift in Sources */,
 				A42157EA26EA34CA008C21D2 /* FailableDecodable.swift in Sources */,
 			);
@@ -344,6 +427,7 @@
 			files = (
 				A42157FE26EA34DE008C21D2 /* UserDefaultsPersistanceTests.swift in Sources */,
 				9F71414A27BF583400CD8F6E /* DataExtensionTests.swift in Sources */,
+				A494C0BC27C40EE700EA0C37 /* MigrationTests.swift in Sources */,
 				A42157FD26EA34DE008C21D2 /* UrlTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +576,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/NGTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,6 +605,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/NGTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,6 +631,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z45WA4MSEP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/NGToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -558,6 +654,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z45WA4MSEP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/NGToolsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
