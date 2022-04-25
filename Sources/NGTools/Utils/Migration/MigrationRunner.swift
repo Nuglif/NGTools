@@ -33,9 +33,9 @@ public class MigrationRunner {
 
                 return task
                     .execute()
-                    .observeOn(scheduler)
+                    .observe(on: scheduler)
                     .andThen(.just(.completed))
-                    .catchError { .just(.error($0)) } // Continue on errors
+                    .catch { .just(.error($0)) } // Continue on errors
                     .do(onSuccess: { result in
                         if case .completed = result {
                             store.setCompleted(task)
@@ -46,6 +46,6 @@ public class MigrationRunner {
         }
         return Observable
             .concat(observables)
-            .subscribeOn(scheduler)
+            .subscribe(on: scheduler)
     }
 }

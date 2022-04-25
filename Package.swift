@@ -12,16 +12,18 @@ let package = Package(
             targets: ["NGTools"])
     ],
     dependencies: [
-        .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "5.0.0"))
+        .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0"))
     ],
     targets: [
         .target(
             name: "NGTools",
             dependencies: [
                 .product(name: "RxSwift", package: "RxSwift")
-            ]),
+            ],
+            exclude: ["Info.plist"]),
         .testTarget(
             name: "NGToolsTests",
-            dependencies: ["NGTools"])
+            dependencies: ["NGTools"],
+            exclude: ["Info.plist"])
     ]
 )
