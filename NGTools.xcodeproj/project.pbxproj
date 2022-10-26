@@ -47,6 +47,11 @@
 		A494C0BF27C411E000EA0C37 /* NGTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421579C26EA3470008C21D2 /* NGTools.framework */; };
 		A4C75F4D27BED95600F752A3 /* MigrationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4C27BED95600F752A3 /* MigrationTask.swift */; };
 		A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */; };
+		B217362F28F8B231004D4F13 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B217362E28F8B231004D4F13 /* RxSwift.xcframework */; platformFilter = ios; };
+		B295F3AE2907729D00CB4087 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AB2907729D00CB4087 /* Crypto.swift */; };
+		B295F3AF2907729D00CB4087 /* CryptoAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AC2907729D00CB4087 /* CryptoAES.swift */; };
+		B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AD2907729D00CB4087 /* CryptoRSA.swift */; };
+		B295F3B4290772E500CB4087 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B295F3B3290772E500CB4087 /* CryptoSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +108,10 @@
 		A494C0BA27C40ED700EA0C37 /* MigrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationTests.swift; sourceTree = "<group>"; };
 		A4C75F4C27BED95600F752A3 /* MigrationTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationTask.swift; sourceTree = "<group>"; };
 		A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationRunner.swift; sourceTree = "<group>"; };
+		B217362E28F8B231004D4F13 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		B295F3AB2907729D00CB4087 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		B295F3AC2907729D00CB4087 /* CryptoAES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoAES.swift; sourceTree = "<group>"; };
+		B295F3AD2907729D00CB4087 /* CryptoRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRSA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +120,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A494C0B327C40E9700EA0C37 /* RxSwift.framework in Frameworks */,
+				B217362F28F8B231004D4F13 /* RxSwift.xcframework in Frameworks */,
+				B295F3B4290772E500CB4087 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +198,7 @@
 				A42157C626EA34CA008C21D2 /* FailableDecodable.swift */,
 				A42157C726EA34CA008C21D2 /* memoization.swift */,
 				A42157C826EA34CA008C21D2 /* Color.swift */,
+				B295F3B1290772A200CB4087 /* Crypto */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -216,6 +228,7 @@
 		A494C0B127C40E9700EA0C37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B217362E28F8B231004D4F13 /* RxSwift.xcframework */,
 				A494C0B227C40E9700EA0C37 /* RxSwift.framework */,
 			);
 			name = Frameworks;
@@ -230,6 +243,16 @@
 				A494C0B627C40EC700EA0C37 /* MigrationStore.swift */,
 			);
 			path = Migration;
+			sourceTree = "<group>";
+		};
+		B295F3B1290772A200CB4087 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				B295F3AB2907729D00CB4087 /* Crypto.swift */,
+				B295F3AC2907729D00CB4087 /* CryptoAES.swift */,
+				B295F3AD2907729D00CB4087 /* CryptoRSA.swift */,
+			);
+			path = Crypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +283,9 @@
 			dependencies = (
 			);
 			name = NGTools;
+			packageProductDependencies = (
+				B295F3B3290772E500CB4087 /* CryptoSwift */,
+			);
 			productName = NGTools;
 			productReference = A421579C26EA3470008C21D2 /* NGTools.framework */;
 			productType = "com.apple.product-type.framework";
@@ -310,6 +336,9 @@
 				Base,
 			);
 			mainGroup = 6E197BD02190D663006FC412;
+			packageReferences = (
+				B295F3B2290772E500CB4087 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+			);
 			productRefGroup = 6E197BDB2190D663006FC412 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,11 +398,13 @@
 				A421580326EA350F008C21D2 /* Array+Extensions.swift in Sources */,
 				A421580A26EA350F008C21D2 /* Calendar+Extensions.swift in Sources */,
 				A42157E826EA34CA008C21D2 /* UserDefaultsPersistanceStrategy.swift in Sources */,
+				B295F3AE2907729D00CB4087 /* Crypto.swift in Sources */,
 				A42157E326EA34CA008C21D2 /* AnyDecodable.swift in Sources */,
 				A42157E426EA34CA008C21D2 /* ConvenienceMathOperators.swift in Sources */,
 				A494C0B827C40EC700EA0C37 /* MigrationStore.swift in Sources */,
 				A42157EC26EA34CA008C21D2 /* Color.swift in Sources */,
 				A421580126EA350F008C21D2 /* IndexPath+Extensions.swift in Sources */,
+				B295F3AF2907729D00CB4087 /* CryptoAES.swift in Sources */,
 				A42157E526EA34CA008C21D2 /* JsonLoader.swift in Sources */,
 				A42157E626EA34CA008C21D2 /* Validator.swift in Sources */,
 				A42157EB26EA34CA008C21D2 /* memoization.swift in Sources */,
@@ -396,6 +427,7 @@
 				A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */,
 				A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
 				A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */,
+				B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */,
 				A42157E126EA34CA008C21D2 /* stringify.swift in Sources */,
 				A42157EA26EA34CA008C21D2 /* FailableDecodable.swift in Sources */,
 			);
@@ -476,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -535,7 +567,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -682,6 +714,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B295F3B2290772E500CB4087 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B295F3B3290772E500CB4087 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B295F3B2290772E500CB4087 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E197BD12190D663006FC412 /* Project object */;
 }

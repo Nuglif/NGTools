@@ -5,20 +5,22 @@ import PackageDescription
 
 let package = Package(
     name: "NGTools",
-    platforms: [.iOS(.v10)],
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "NGTools",
             targets: ["NGTools"])
     ],
     dependencies: [
-        .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0"))
+        .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0")),
+        .package(name: "CryptoSwift", url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.6.0"))
     ],
     targets: [
         .target(
             name: "NGTools",
             dependencies: [
-                .product(name: "RxSwift", package: "RxSwift")
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "CryptoSwift", package: "CryptoSwift")
             ],
             exclude: ["Info.plist"]),
         .testTarget(
