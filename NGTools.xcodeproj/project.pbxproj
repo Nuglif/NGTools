@@ -48,6 +48,7 @@
 		A4C75F4D27BED95600F752A3 /* MigrationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4C27BED95600F752A3 /* MigrationTask.swift */; };
 		A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */; };
 		B217362F28F8B231004D4F13 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B217362E28F8B231004D4F13 /* RxSwift.xcframework */; platformFilter = ios; };
+		B2454D7E29102936001E7B9E /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2454D7D29102936001E7B9E /* CryptoTests.swift */; };
 		B295F3AE2907729D00CB4087 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AB2907729D00CB4087 /* Crypto.swift */; };
 		B295F3AF2907729D00CB4087 /* CryptoAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AC2907729D00CB4087 /* CryptoAES.swift */; };
 		B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AD2907729D00CB4087 /* CryptoRSA.swift */; };
@@ -109,6 +110,7 @@
 		A4C75F4C27BED95600F752A3 /* MigrationTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationTask.swift; sourceTree = "<group>"; };
 		A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationRunner.swift; sourceTree = "<group>"; };
 		B217362E28F8B231004D4F13 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		B2454D7D29102936001E7B9E /* CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		B295F3AB2907729D00CB4087 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		B295F3AC2907729D00CB4087 /* CryptoAES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoAES.swift; sourceTree = "<group>"; };
 		B295F3AD2907729D00CB4087 /* CryptoRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRSA.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		A42157B326EA34CA008C21D2 /* NGToolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				B2454D7D29102936001E7B9E /* CryptoTests.swift */,
 				9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */,
 				A494C0BA27C40ED700EA0C37 /* MigrationTests.swift */,
 				A42157B426EA34CA008C21D2 /* UrlTests.swift */,
@@ -297,7 +300,6 @@
 				A42157A026EA3470008C21D2 /* Sources */,
 				A42157A126EA3470008C21D2 /* Frameworks */,
 				A42157A226EA3470008C21D2 /* Resources */,
-				A494C0C327C4133F00EA0C37 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -366,29 +368,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		A494C0C327C4133F00EA0C37 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		A421579826EA3470008C21D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -441,6 +420,7 @@
 				9F71414A27BF583400CD8F6E /* DataExtensionTests.swift in Sources */,
 				A494C0BC27C40EE700EA0C37 /* MigrationTests.swift in Sources */,
 				A42157FD26EA34DE008C21D2 /* UrlTests.swift in Sources */,
+				B2454D7E29102936001E7B9E /* CryptoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
