@@ -17,8 +17,13 @@ public struct CryptoAES {
 
     static func getRandomBytes(length: Int = 32) throws -> Data {
         var keyData = Data(count: length)
-        let result = keyData.withUnsafeMutableBytes {
-            SecRandomCopyBytes(kSecRandomDefault, length, $0.baseAddress!)
+
+        let result = try keyData.withUnsafeMutableBytes { pointer in
+            guard let baseAddress = pointer.baseAddress else {
+                throw Crypto.CryptoError.aesRandomBytesError
+            }
+
+            return SecRandomCopyBytes(kSecRandomDefault, length, baseAddress)
         }
 
         guard result == errSecSuccess else {
@@ -48,9 +53,12 @@ public struct CryptoAES {
         let gcm = GCM(iv: iv.bytes, mode: .detached)
         let aes = try AES(key: aesKey.bytes, blockMode: gcm, padding: .noPadding)
         let encrypted = try aes.encrypt(data.bytes)
-        let tag = gcm.authenticationTag
 
-        return (Data(encrypted), Data(tag!))
+        guard let tag = gcm.authenticationTag else {
+            throw Crypto.CryptoError.aesEncryptionError
+        }
+
+        return (Data(encrypted), Data(tag))
     }
 
     //MARK: - Decryption

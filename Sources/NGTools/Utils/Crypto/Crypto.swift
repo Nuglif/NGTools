@@ -21,11 +21,11 @@ public struct Crypto {
         case aesDecryptionError
     }
 
-    public static func encryptForServer(_ text: String, rsaPublicKey: String) throws -> String {
+    public static func encryptForAuthenticationServer(_ text: String, rsaPublicKey: String) throws -> String {
         if #available(iOS 13.0, *) {
-            return try encryptForServerCK(text, rsaPublicKey: rsaPublicKey)
+            return try encryptForAuthenticationServerCK(text, rsaPublicKey: rsaPublicKey)
         } else {
-            return try encryptForServerCS(text, rsaPublicKey: rsaPublicKey)
+            return try encryptForAuthenticationServerCS(text, rsaPublicKey: rsaPublicKey)
         }
     }
 }
@@ -33,7 +33,7 @@ public struct Crypto {
 private extension Crypto {
 
     @available(iOS 13.0, *)
-    static func encryptForServerCK(_ text: String, rsaPublicKey: String) throws -> String {
+    static func encryptForAuthenticationServerCK(_ text: String, rsaPublicKey: String) throws -> String {
 
         // 1. Generate AES key
         let aesKeyData = try CryptoAES.getRandomBytes()
@@ -57,7 +57,7 @@ private extension Crypto {
     }
 
     @available(iOS, obsoleted:13.0)
-    static func encryptForServerCS(_ text: String, rsaPublicKey: String) throws -> String {
+    static func encryptForAuthenticationServerCS(_ text: String, rsaPublicKey: String) throws -> String {
 
         // 1. Generate AES key
         let aesKeyData = try CryptoAES.getRandomBytes(length: CryptoAES.keySize)

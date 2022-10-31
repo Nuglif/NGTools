@@ -9,13 +9,6 @@ import Foundation
 
 public struct CryptoRSA {
 
-    static func generatePublicKeyFrom(pemFileURL: URL) throws -> SecKey {
-        let fileData = try Data(contentsOf: pemFileURL)
-        guard let pemString = String(data: fileData, encoding: .utf8) else { throw Crypto.CryptoError.rsaKeyCreationError }
-
-        return try generatePublicKeyFrom(pemString: pemString)
-    }
-
     static func generatePublicKeyFrom(pemString: String) throws -> SecKey {
         let clearedPEM = CryptoRSA.clearPEMString(pemString)
 
