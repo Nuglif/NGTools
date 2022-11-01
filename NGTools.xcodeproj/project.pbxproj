@@ -49,8 +49,13 @@
 		A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */; };
 		B217362F28F8B231004D4F13 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B217362E28F8B231004D4F13 /* RxSwift.xcframework */; platformFilter = ios; };
 		B2454D7E29102936001E7B9E /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2454D7D29102936001E7B9E /* CryptoTests.swift */; };
-		B295F3AE2907729D00CB4087 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AB2907729D00CB4087 /* Crypto.swift */; };
-		B295F3AF2907729D00CB4087 /* CryptoAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AC2907729D00CB4087 /* CryptoAES.swift */; };
+		B24713052911633100FBD1E9 /* CryptoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24713042911633100FBD1E9 /* CryptoBuilder.swift */; };
+		B24713092911665300FBD1E9 /* CryptoAESCK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24713082911665300FBD1E9 /* CryptoAESCK.swift */; };
+		B247130B2911665D00FBD1E9 /* CryptoAESCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247130A2911665D00FBD1E9 /* CryptoAESCS.swift */; };
+		B247130D2911697600FBD1E9 /* CryptoKitServerEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247130C2911697600FBD1E9 /* CryptoKitServerEncryptor.swift */; };
+		B247130F2911697F00FBD1E9 /* CryptoSwiftServerEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247130E2911697F00FBD1E9 /* CryptoSwiftServerEncryptor.swift */; };
+		B2471311291169C600FBD1E9 /* ServerEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2471310291169C600FBD1E9 /* ServerEncryptor.swift */; };
+		B247131529116C1800FBD1E9 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247131429116C1800FBD1E9 /* Crypto.swift */; };
 		B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AD2907729D00CB4087 /* CryptoRSA.swift */; };
 		B295F3B4290772E500CB4087 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B295F3B3290772E500CB4087 /* CryptoSwift */; };
 /* End PBXBuildFile section */
@@ -111,8 +116,13 @@
 		A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationRunner.swift; sourceTree = "<group>"; };
 		B217362E28F8B231004D4F13 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		B2454D7D29102936001E7B9E /* CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
-		B295F3AB2907729D00CB4087 /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
-		B295F3AC2907729D00CB4087 /* CryptoAES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoAES.swift; sourceTree = "<group>"; };
+		B24713042911633100FBD1E9 /* CryptoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBuilder.swift; sourceTree = "<group>"; };
+		B24713082911665300FBD1E9 /* CryptoAESCK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAESCK.swift; sourceTree = "<group>"; };
+		B247130A2911665D00FBD1E9 /* CryptoAESCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAESCS.swift; sourceTree = "<group>"; };
+		B247130C2911697600FBD1E9 /* CryptoKitServerEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitServerEncryptor.swift; sourceTree = "<group>"; };
+		B247130E2911697F00FBD1E9 /* CryptoSwiftServerEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSwiftServerEncryptor.swift; sourceTree = "<group>"; };
+		B2471310291169C600FBD1E9 /* ServerEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEncryptor.swift; sourceTree = "<group>"; };
+		B247131429116C1800FBD1E9 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		B295F3AD2907729D00CB4087 /* CryptoRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRSA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,11 +258,32 @@
 			path = Migration;
 			sourceTree = "<group>";
 		};
+		B2471312291169CB00FBD1E9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B2471310291169C600FBD1E9 /* ServerEncryptor.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B2471313291169D900FBD1E9 /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				B24713082911665300FBD1E9 /* CryptoAESCK.swift */,
+				B247130A2911665D00FBD1E9 /* CryptoAESCS.swift */,
+			);
+			path = AES;
+			sourceTree = "<group>";
+		};
 		B295F3B1290772A200CB4087 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				B295F3AB2907729D00CB4087 /* Crypto.swift */,
-				B295F3AC2907729D00CB4087 /* CryptoAES.swift */,
+				B247131429116C1800FBD1E9 /* Crypto.swift */,
+				B24713042911633100FBD1E9 /* CryptoBuilder.swift */,
+				B247130C2911697600FBD1E9 /* CryptoKitServerEncryptor.swift */,
+				B247130E2911697F00FBD1E9 /* CryptoSwiftServerEncryptor.swift */,
+				B2471312291169CB00FBD1E9 /* Protocols */,
+				B2471313291169D900FBD1E9 /* AES */,
 				B295F3AD2907729D00CB4087 /* CryptoRSA.swift */,
 			);
 			path = Crypto;
@@ -375,23 +406,27 @@
 			files = (
 				A42157E926EA34CA008C21D2 /* Reachability.swift in Sources */,
 				A421580326EA350F008C21D2 /* Array+Extensions.swift in Sources */,
+				B247130F2911697F00FBD1E9 /* CryptoSwiftServerEncryptor.swift in Sources */,
 				A421580A26EA350F008C21D2 /* Calendar+Extensions.swift in Sources */,
 				A42157E826EA34CA008C21D2 /* UserDefaultsPersistanceStrategy.swift in Sources */,
-				B295F3AE2907729D00CB4087 /* Crypto.swift in Sources */,
 				A42157E326EA34CA008C21D2 /* AnyDecodable.swift in Sources */,
 				A42157E426EA34CA008C21D2 /* ConvenienceMathOperators.swift in Sources */,
 				A494C0B827C40EC700EA0C37 /* MigrationStore.swift in Sources */,
 				A42157EC26EA34CA008C21D2 /* Color.swift in Sources */,
 				A421580126EA350F008C21D2 /* IndexPath+Extensions.swift in Sources */,
-				B295F3AF2907729D00CB4087 /* CryptoAES.swift in Sources */,
 				A42157E526EA34CA008C21D2 /* JsonLoader.swift in Sources */,
+				B247131529116C1800FBD1E9 /* Crypto.swift in Sources */,
 				A42157E626EA34CA008C21D2 /* Validator.swift in Sources */,
+				B2471311291169C600FBD1E9 /* ServerEncryptor.swift in Sources */,
+				B247130D2911697600FBD1E9 /* CryptoKitServerEncryptor.swift in Sources */,
 				A42157EB26EA34CA008C21D2 /* memoization.swift in Sources */,
+				B24713092911665300FBD1E9 /* CryptoAESCK.swift in Sources */,
 				A421580426EA350F008C21D2 /* UIColor+Extensions.swift in Sources */,
 				A42157E226EA34CA008C21D2 /* CacheItem.swift in Sources */,
 				A421580726EA350F008C21D2 /* UIFont+Extensions.swift in Sources */,
 				A4C75F4D27BED95600F752A3 /* MigrationTask.swift in Sources */,
 				A42157E726EA34CA008C21D2 /* copyOnWriteValueType.swift in Sources */,
+				B24713052911633100FBD1E9 /* CryptoBuilder.swift in Sources */,
 				A42157E026EA34CA008C21D2 /* PersistanceStrategy.swift in Sources */,
 				A421580D26EA350F008C21D2 /* UIEdgeInsets+Extensions.swift in Sources */,
 				A421580626EA350F008C21D2 /* CoreGraphics+Extensions.swift in Sources */,
@@ -406,6 +441,7 @@
 				A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */,
 				A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
 				A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */,
+				B247130B2911665D00FBD1E9 /* CryptoAESCS.swift in Sources */,
 				B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */,
 				A42157E126EA34CA008C21D2 /* stringify.swift in Sources */,
 				A42157EA26EA34CA008C21D2 /* FailableDecodable.swift in Sources */,

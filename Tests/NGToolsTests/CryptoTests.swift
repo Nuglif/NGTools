@@ -24,20 +24,20 @@ final class CryptoTests: XCTestCase {
             }
 
             if #available(iOS 13, *) {
-                let key = CryptoAES.getAESKey(keyData)
-                let encodedData = try CryptoAES.encrypt(message, key: key)
-                let decodedData = try CryptoAES.decrypt(encodedData, key: key)
+                let key = CryptoAESCK.getAESKey(keyData)
+                let encodedData = try CryptoAESCK.encrypt(message, key: key)
+                let decodedData = try CryptoAESCK.decrypt(encodedData, key: key)
 
                 XCTAssertEqual(decodedData, message)
                 
             } else {
-                let encodedData = try CryptoAES.encrypt(message, aesKey: keyData, iv: ivData)
+                let encodedData = try CryptoAESCS.encrypt(message, aesKey: keyData, iv: ivData)
                 let encodedDataBase64 = encodedData.cipherText.base64EncodedString()
                 let expectedValue = "mU4TsQ24Ug=="
 
                 XCTAssertEqual(encodedDataBase64, expectedValue, "Unexpected encrypted data")
 
-                let decodedData = try CryptoAES.decrypt(encodedData.cipherText, aesKey: keyData, iv: ivData, tag: encodedData.tag)
+                let decodedData = try CryptoAESCS.decrypt(encodedData.cipherText, aesKey: keyData, iv: ivData, tag: encodedData.tag)
                 XCTAssertEqual(String(data: decodedData, encoding: .utf8), message)
             }
 
@@ -52,7 +52,6 @@ final class CryptoTests: XCTestCase {
         do {
             let message = "NGTools"
             let rsaPublicKey = """
-            -----BEGIN PUBLIC KEY-----
             MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4BldolR6OJqHn1JwOMSQ
             K0YUdbtVZNtcaxFqQw9bcMRvJzNQtaVmXGBbCynTDieLIQ8FDpLKzHfNeh1Yk3V7
             8glIyK7KTgx9vaq4IgNHOeijlevYnK9PHohz5j9J1aYejiAZQSjCvOmkD7D4EKKs
@@ -60,7 +59,6 @@ final class CryptoTests: XCTestCase {
             /5t7SkO+9/YUFluU3F1pyWIJSwuWLgKs7RX1O5GVfBixyILb0+NRKaTB2qfKJyVH
             D5uORX7xYgvu3Nw5an3pbwmEFzJ2Qytdk9/SHs/9s0olgIh9ius/MagB2k1gBZR4
             hwIDAQAB
-            -----END PUBLIC KEY-----
             """
 
             guard let messageData = message.data(using: .utf8) else {
@@ -76,7 +74,7 @@ final class CryptoTests: XCTestCase {
         } catch Crypto.CryptoError.rsaKeyCreationError {
             XCTFail("Failed to create RSA key")
         } catch {
-            XCTFail()
+            XCTFail(error.localizedDescription)
         }
     }
 }

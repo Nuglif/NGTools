@@ -1,13 +1,14 @@
 //
-//  RSA.swift
+//  CryptoRSA.swift
 //  NGTools
 //
-//  Created by Lambert, Romain (Ordinateur) on 2022-10-07.
+//  Created by Lambert, Romain (Ordinateur) on 2022-11-01.
+//  Copyright © 2022 Nuglif. All rights reserved.
 //
 
 import Foundation
 
-public struct CryptoRSA {
+struct CryptoRSA {
 
     static func generatePublicKeyFrom(pemString: String) throws -> SecKey {
         let clearedPEM = CryptoRSA.clearPEMString(pemString)
@@ -23,7 +24,11 @@ public struct CryptoRSA {
 
         var error: Unmanaged<CFError>?
         guard let key = SecKeyCreateWithData(keyData as CFData, keyAttributes as CFDictionary, &error) else {
-            throw Crypto.CryptoError.rsaKeyCreationError
+            if let managedError = error?.takeRetainedValue() as? Error {
+                throw managedError
+            } else {
+                throw Crypto.CryptoError.rsaKeyCreationError
+            }
         }
 
         return key
@@ -45,9 +50,6 @@ public struct CryptoRSA {
 
 private extension CryptoRSA {
     static func clearPEMString(_ pemString: String) -> String {
-        return pemString.filter { $0 != " " }
-            .components(separatedBy: "\n")
-            .filter { !$0.starts(with: "-----") }
-            .joined()
+        return pemString.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
