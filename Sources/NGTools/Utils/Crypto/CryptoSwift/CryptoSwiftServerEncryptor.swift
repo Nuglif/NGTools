@@ -10,6 +10,7 @@ import Foundation
 import CommonCrypto
 import CryptoSwift
 
+@available(iOS, obsoleted:13.0)
 struct CryptoSwiftServerEncryptor: ServerEncryptor {
 
     private static let ivSize: Int = kCCBlockSizeAES128
@@ -22,7 +23,7 @@ struct CryptoSwiftServerEncryptor: ServerEncryptor {
         let aesIVData = try Data.randomBytes(length: CryptoSwiftServerEncryptor.ivSize)
 
         // 2. Encrypt data
-        let encryptedData = try CryptoAESCS.encrypt(text, aesKey: aesKeyData, iv: aesIVData)
+        let encryptedData = try CryptoSwiftAES.encrypt(text, aesKey: aesKeyData, iv: aesIVData)
 
         // 3. Encrypt AES key with RSA public key
         let rsaPublicKey = try CryptoRSA.generatePublicKeyFrom(pemString: rsaPublicKey)

@@ -9,7 +9,7 @@ import Foundation
 import CryptoSwift
 
 @available(iOS, obsoleted:13.0)
-struct CryptoAESCS {
+struct CryptoSwiftAES {
 
     static func encrypt(_ string: String, aesKey: Data, iv: Data) throws -> (cipherText: Data, tag: Data) {
         guard let data = string.data(using: .utf8) else { throw Crypto.CryptoError.aesEncryptionError }

@@ -10,7 +10,7 @@ import Foundation
 import CryptoKit
 
 @available(iOS 13.0, *)
-struct CryptoAESCK {
+struct CryptoKitAES {
 
     static func getAESKey(_ keyData: Data) -> SymmetricKey {
         return SymmetricKey.init(data: keyData)

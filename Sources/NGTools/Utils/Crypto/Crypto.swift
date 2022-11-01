@@ -17,7 +17,6 @@ public struct Crypto {
         case aesRandomBytesError
         case aesEncryptionError
         case aesDecryptionError
-        case cryptoKitNotAvailable
     }
 
     public static func encryptForAuthenticationServer(_ text: String, rsaPublicKey: String) throws -> String {

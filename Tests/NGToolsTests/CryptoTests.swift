@@ -24,20 +24,20 @@ final class CryptoTests: XCTestCase {
             }
 
             if #available(iOS 13, *) {
-                let key = CryptoAESCK.getAESKey(keyData)
-                let encodedData = try CryptoAESCK.encrypt(message, key: key)
-                let decodedData = try CryptoAESCK.decrypt(encodedData, key: key)
+                let key = CryptoKitAES.getAESKey(keyData)
+                let encodedData = try CryptoKitAES.encrypt(message, key: key)
+                let decodedData = try CryptoKitAES.decrypt(encodedData, key: key)
 
                 XCTAssertEqual(decodedData, message)
                 
             } else {
-                let encodedData = try CryptoAESCS.encrypt(message, aesKey: keyData, iv: ivData)
+                let encodedData = try CryptoSwiftAES.encrypt(message, aesKey: keyData, iv: ivData)
                 let encodedDataBase64 = encodedData.cipherText.base64EncodedString()
                 let expectedValue = "mU4TsQ24Ug=="
 
                 XCTAssertEqual(encodedDataBase64, expectedValue, "Unexpected encrypted data")
 
-                let decodedData = try CryptoAESCS.decrypt(encodedData.cipherText, aesKey: keyData, iv: ivData, tag: encodedData.tag)
+                let decodedData = try CryptoSwiftAES.decrypt(encodedData.cipherText, aesKey: keyData, iv: ivData, tag: encodedData.tag)
                 XCTAssertEqual(String(data: decodedData, encoding: .utf8), message)
             }
 
