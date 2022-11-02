@@ -11,6 +11,10 @@ import CommonCrypto
 
 public extension Data {
 
+    enum DataError: Error {
+        case randomBytesError
+    }
+
     var sha1: String {
         let digest: [UInt8] = withUnsafeBytes {
             var digest = [UInt8](repeating: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
@@ -56,5 +60,23 @@ public extension Data {
     func toHexadecimal() -> String {
         return reduce("", { $0 + String(format: "%02X", $1) })
             .lowercased()
+    }
+
+    static func randomBytes(length: Int = 32) throws -> Data {
+        var randomData = Data(count: length)
+
+        let result = try randomData.withUnsafeMutableBytes { pointer in
+            guard let baseAddress = pointer.baseAddress else {
+                throw DataError.randomBytesError
+            }
+
+            return SecRandomCopyBytes(kSecRandomDefault, length, baseAddress)
+        }
+
+        guard result == errSecSuccess else {
+            throw DataError.randomBytesError
+        }
+
+        return randomData
     }
 }
