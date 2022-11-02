@@ -12,34 +12,47 @@ import XCTest
 
 final class CryptoTests: XCTestCase {
 
-    func testAESEncryption() {
-        do {
-            let message = "NGTools"
-            let base64KeyData = "xuklFcMMklVs3uOwsaOGLzgVpZyjhgm8Ffm9Qf27JZc="
-            let base64IVData = "4lKdApKttNHlw4p/nwKEVw=="
+    let message = "NGTools"
+    let base64KeyData = "xuklFcMMklVs3uOwsaOGLzgVpZyjhgm8Ffm9Qf27JZc="
+    let base64IVData = "4lKdApKttNHlw4p/nwKEVw=="
 
+    func testCryptoSwiftAESEncryption() {
+        do {
             guard let keyData = Data(base64Encoded: base64KeyData), let ivData = Data(base64Encoded: base64IVData) else {
                 XCTFail("Failed to create data")
                 return
             }
 
-            if #available(iOS 13, *) {
-                let key = CryptoKitAES.getAESKey(keyData)
-                let encodedData = try CryptoKitAES.encrypt(message, key: key)
-                let decodedData = try CryptoKitAES.decrypt(encodedData, key: key)
+            let encodedData = try CryptoSwiftAES.encrypt(message, aesKey: keyData, iv: ivData)
+            let encodedDataBase64 = encodedData.cipherText.base64EncodedString()
+            let expectedValue = "mU4TsQ24Ug=="
 
-                XCTAssertEqual(decodedData, message)
-                
-            } else {
-                let encodedData = try CryptoSwiftAES.encrypt(message, aesKey: keyData, iv: ivData)
-                let encodedDataBase64 = encodedData.cipherText.base64EncodedString()
-                let expectedValue = "mU4TsQ24Ug=="
+            XCTAssertEqual(encodedDataBase64, expectedValue, "Unexpected encrypted data")
 
-                XCTAssertEqual(encodedDataBase64, expectedValue, "Unexpected encrypted data")
+            let decodedData = try CryptoSwiftAES.decrypt(encodedData.cipherText, aesKey: keyData, iv: ivData, tag: encodedData.tag)
+            XCTAssertEqual(String(data: decodedData, encoding: .utf8), message)
 
-                let decodedData = try CryptoSwiftAES.decrypt(encodedData.cipherText, aesKey: keyData, iv: ivData, tag: encodedData.tag)
-                XCTAssertEqual(String(data: decodedData, encoding: .utf8), message)
+        } catch Crypto.CryptoError.aesEncryptionError {
+            XCTFail("Failed to encrypt message")
+        } catch {
+            XCTFail("Failed to decrypt message")
+        }
+    }
+
+    func testCryptoKitAESEncryption() {
+        guard #available(iOS 13, *) else { return }
+        
+        do {
+            guard let keyData = Data(base64Encoded: base64KeyData) else {
+                XCTFail("Failed to create data")
+                return
             }
+
+            let key = CryptoKitAES.getAESKey(keyData)
+            let encodedData = try CryptoKitAES.encrypt(message, key: key)
+            let decodedData = try CryptoKitAES.decrypt(encodedData, key: key)
+
+            XCTAssertEqual(decodedData, message)
 
         } catch Crypto.CryptoError.aesEncryptionError {
             XCTFail("Failed to encrypt message")
@@ -50,7 +63,6 @@ final class CryptoTests: XCTestCase {
 
     func testRSAEncryption() {
         do {
-            let message = "NGTools"
             let rsaPublicKey = """
             MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4BldolR6OJqHn1JwOMSQ
             K0YUdbtVZNtcaxFqQw9bcMRvJzNQtaVmXGBbCynTDieLIQ8FDpLKzHfNeh1Yk3V7
