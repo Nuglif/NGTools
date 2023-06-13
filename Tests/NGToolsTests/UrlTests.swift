@@ -47,7 +47,10 @@ final class UrlTests: XCTestCase {
 
     func testUrlComponentsWithArray() {
         let baseUrl = "https://testhost.com?cust_params=\("key1=value1&key2=value2".encoded)"
-        let parameters: [String: Any] = ["key3": ["v1", true, 99], "key4": "value4"]
+        var parameters = [String: Any]()
+
+        parameters["key3"] = ["v1", true, 99] as [Any]
+        parameters["key4"] = "value4"
 
         let components = baseUrl.integrate(parameters)
         let expectedComponents = URLComponents(string: "https://testhost.com?cust_params=\("key1=value1&key2=value2&key3=v1,true,99&key4=value4".encoded)")
