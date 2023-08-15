@@ -40,6 +40,7 @@
 		A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157D426EA34CA008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift */; };
 		A421580D26EA350F008C21D2 /* UIEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157CE26EA34CA008C21D2 /* UIEdgeInsets+Extensions.swift */; };
 		A421580E26EA350F008C21D2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157CD26EA34CA008C21D2 /* String+Extensions.swift */; };
+		A460BE2B2A97F796001E70D2 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460BE2A2A97F796001E70D2 /* Storage.swift */; };
 		A4871FB32A38C4F300281A97 /* ProcessInfo+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4871FB22A38C4F300281A97 /* ProcessInfo+Extensions.swift */; };
 		A4871FB62A38C53D00281A97 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A4871FB52A38C53D00281A97 /* RxCocoa */; };
 		A4871FB82A38C53D00281A97 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A4871FB72A38C53D00281A97 /* RxRelay */; };
@@ -50,6 +51,9 @@
 		A494C0BF27C411E000EA0C37 /* NGTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A421579C26EA3470008C21D2 /* NGTools.framework */; };
 		A4C75F4D27BED95600F752A3 /* MigrationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4C27BED95600F752A3 /* MigrationTask.swift */; };
 		A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */; };
+		A4F8E82B2A86BD350058F809 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F8E82A2A86BD350058F809 /* Defaults.swift */; };
+		A4F8E8312A8A612E0058F809 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F8E8302A8A612E0058F809 /* Key.swift */; };
+		A4F8E8342A8AB0D90058F809 /* DefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F8E8322A8AADF60058F809 /* DefaultsTests.swift */; };
 		B2454D7E29102936001E7B9E /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2454D7D29102936001E7B9E /* CryptoTests.swift */; };
 		B24713052911633100FBD1E9 /* CryptoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24713042911633100FBD1E9 /* CryptoBuilder.swift */; };
 		B24713092911665300FBD1E9 /* CryptoKitAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24713082911665300FBD1E9 /* CryptoKitAES.swift */; };
@@ -110,12 +114,16 @@
 		A42157D726EA34CA008C21D2 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		A42157D826EA34CA008C21D2 /* UIImage+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIColor.swift"; sourceTree = "<group>"; };
 		A42157D926EA34CA008C21D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A460BE2A2A97F796001E70D2 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A4871FB22A38C4F300281A97 /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
 		A494C0B627C40EC700EA0C37 /* MigrationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationStore.swift; sourceTree = "<group>"; };
 		A494C0B727C40EC700EA0C37 /* MigrationTaskState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationTaskState.swift; sourceTree = "<group>"; };
 		A494C0BA27C40ED700EA0C37 /* MigrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigrationTests.swift; sourceTree = "<group>"; };
 		A4C75F4C27BED95600F752A3 /* MigrationTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationTask.swift; sourceTree = "<group>"; };
 		A4C75F4F27BED96E00F752A3 /* MigrationRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationRunner.swift; sourceTree = "<group>"; };
+		A4F8E82A2A86BD350058F809 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		A4F8E8302A8A612E0058F809 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		A4F8E8322A8AADF60058F809 /* DefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsTests.swift; sourceTree = "<group>"; };
 		B2454D7D29102936001E7B9E /* CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		B24713042911633100FBD1E9 /* CryptoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBuilder.swift; sourceTree = "<group>"; };
 		B24713082911665300FBD1E9 /* CryptoKitAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitAES.swift; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				B2454D7D29102936001E7B9E /* CryptoTests.swift */,
+				A4F8E8322A8AADF60058F809 /* DefaultsTests.swift */,
 				9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */,
 				A494C0BA27C40ED700EA0C37 /* MigrationTests.swift */,
 				A42157B426EA34CA008C21D2 /* UrlTests.swift */,
@@ -198,6 +207,7 @@
 		A42157BA26EA34CA008C21D2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4F8E8292A86BD1C0058F809 /* Storage */,
 				A4C75F4E27BED95B00F752A3 /* Migration */,
 				A42157BB26EA34CA008C21D2 /* curry.swift */,
 				A42157BC26EA34CA008C21D2 /* PersistanceStrategy.swift */,
@@ -256,6 +266,16 @@
 				A494C0B627C40EC700EA0C37 /* MigrationStore.swift */,
 			);
 			path = Migration;
+			sourceTree = "<group>";
+		};
+		A4F8E8292A86BD1C0058F809 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A4F8E82A2A86BD350058F809 /* Defaults.swift */,
+				A4F8E8302A8A612E0058F809 /* Key.swift */,
+				A460BE2A2A97F796001E70D2 /* Storage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		B26DB2022911B0B50074D4B0 /* CryptoKit */ = {
@@ -424,12 +444,14 @@
 				B247131529116C1800FBD1E9 /* Crypto.swift in Sources */,
 				A42157E626EA34CA008C21D2 /* Validator.swift in Sources */,
 				B2471311291169C600FBD1E9 /* ServerEncryptor.swift in Sources */,
+				A460BE2B2A97F796001E70D2 /* Storage.swift in Sources */,
 				B247130D2911697600FBD1E9 /* CryptoKitServerEncryptor.swift in Sources */,
 				A42157EB26EA34CA008C21D2 /* memoization.swift in Sources */,
 				B24713092911665300FBD1E9 /* CryptoKitAES.swift in Sources */,
 				A4871FB32A38C4F300281A97 /* ProcessInfo+Extensions.swift in Sources */,
 				A421580426EA350F008C21D2 /* UIColor+Extensions.swift in Sources */,
 				A42157E226EA34CA008C21D2 /* CacheItem.swift in Sources */,
+				A4F8E8312A8A612E0058F809 /* Key.swift in Sources */,
 				A421580726EA350F008C21D2 /* UIFont+Extensions.swift in Sources */,
 				A4C75F4D27BED95600F752A3 /* MigrationTask.swift in Sources */,
 				A42157E726EA34CA008C21D2 /* copyOnWriteValueType.swift in Sources */,
@@ -450,6 +472,7 @@
 				A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */,
 				B247130B2911665D00FBD1E9 /* CryptoSwiftAES.swift in Sources */,
 				B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */,
+				A4F8E82B2A86BD350058F809 /* Defaults.swift in Sources */,
 				A42157E126EA34CA008C21D2 /* stringify.swift in Sources */,
 				A42157EA26EA34CA008C21D2 /* FailableDecodable.swift in Sources */,
 			);
@@ -464,6 +487,7 @@
 				A494C0BC27C40EE700EA0C37 /* MigrationTests.swift in Sources */,
 				A42157FD26EA34DE008C21D2 /* UrlTests.swift in Sources */,
 				B2454D7E29102936001E7B9E /* CryptoTests.swift in Sources */,
+				A4F8E8342A8AB0D90058F809 /* DefaultsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
