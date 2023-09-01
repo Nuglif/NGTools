@@ -21,6 +21,8 @@ final class DefaultsTests: XCTestCase {
         let dateValue = Date(timeIntervalSince1970: 0)
         let boolValue = true
         let dataValue = "data".data(using: .utf8)!
+        let arrayValue = ["a", "b", "c"]
+        let dictValue = ["a": "1", "b": "2", "c": "3"]
         let defaults = Defaults()
 
         defaults.set(stringValue, for: .stringKey)
@@ -34,6 +36,8 @@ final class DefaultsTests: XCTestCase {
         defaults.set(dateValue, for: .dateKey)
         defaults.set(boolValue, for: .boolKey)
         defaults.set(dataValue, for: .dataKey)
+        defaults.set(arrayValue, for: .arrayKey)
+        defaults.set(dictValue, for: .dictionaryKey)
 
         XCTAssertEqual(defaults.get(.stringKey), nil)
         XCTAssertEqual(defaults.get(.doubleKey), doubleValue)
@@ -42,6 +46,9 @@ final class DefaultsTests: XCTestCase {
         XCTAssertEqual(defaults.get(.dateKey), dateValue)
         XCTAssertEqual(defaults.get(.boolKey), boolValue)
         XCTAssertEqual(defaults.get(.dataKey), dataValue)
+        XCTAssertEqual(defaults.get(.dataKey), dataValue)
+        XCTAssertEqual(defaults.get(.arrayKey), arrayValue)
+        XCTAssertEqual(defaults.get(.dictionaryKey), dictValue)
     }
 
     func testCodables() {
@@ -108,7 +115,7 @@ final class DefaultsTests: XCTestCase {
                                      "key2": "string",
                                      "key3": true ]
 
-        defaults.set(value: dict1, forKey: "key")
+        defaults.set(dict1, forKey: "key")
 
         let dict2 = defaults.object(forKey: "key") as! [String: Any]
 
@@ -122,7 +129,7 @@ final class DefaultsTests: XCTestCase {
         let defaults = Defaults()
         let array1: [String] = [ "value1", "value2", "value3" ]
 
-        defaults.set(value: array1, forKey: "key")
+        defaults.set(array1, forKey: "key")
 
         let array2 = defaults.object(forKey: "key") as! [String]
 
@@ -142,6 +149,8 @@ extension Key {
     static var dateKey: Key<Date> { .init("dateKey") }
     static var boolKey: Key<Bool> { .init("boolKey") }
     static var dataKey: Key<Data> { .init("dataKey") }
+    static var arrayKey: Key<[String]> { .init("arrayKey") }
+    static var dictionaryKey: Key<[String: String]> { .init("dictionaryKey") }
     static var keyCodable: Key<TestObject> { .init("keyCodable") }
     static var keySuite: Key<String> { .init("keySuite") }
     static var keyError: Key<String> { .init("keyError") }

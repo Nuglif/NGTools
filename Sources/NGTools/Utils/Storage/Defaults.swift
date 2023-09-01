@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import OSLog
 
 @objc
 open class Defaults: NSObject {
@@ -32,20 +33,39 @@ open class Defaults: NSObject {
 extension Defaults: CodableStorage {
 
     public func get<V>(_ key: Key<V>) -> V? where V: Codable {
-        if key.isPrimitive {
-            return backingStore?.object(forKey: key.name) as? V
-        } else if let data = backingStore?.data(forKey: key.name) {
-            return try? decoder.decode(V.self, from: data)
-        } else {
+        do {
+            if key.isPrimitive {
+                return backingStore?.object(forKey: key.name) as? V
+            } else if let data = backingStore?.data(forKey: key.name) {
+                return try decoder.decode(V.self, from: data)
+            } else {
+                return nil
+            }
+        } catch {
+            if #available(iOS 14.0, *) {
+                Logger.main.error("Error retreiving object: \(error)")
+            } else {
+                print("Error retreiving object: \(error)")
+            }
             return nil
         }
+
     }
 
     public func set<V>(_ value: V?, for key: Key<V>) where V: Codable {
-        if key.isPrimitive || value == nil {
-            backingStore?.set(value, forKey: key.name)
-        } else if let data = try? encoder.encode(value) {
-            backingStore?.set(data, forKey: key.name)
+        do {
+            if key.isPrimitive || value == nil {
+                backingStore?.set(value, forKey: key.name)
+            } else {
+                let data = try encoder.encode(value)
+                backingStore?.set(data, forKey: key.name)
+            }
+        } catch {
+            if #available(iOS 14.0, *) {
+                Logger.main.error("Error storing object: \(error)")
+            } else {
+                print("Error storing object: \(error)")
+            }
         }
     }
 }
@@ -84,4 +104,11 @@ private extension Key {
         Value.self == Array<AnyObject>.self ||
         Value.self == Dictionary<String, AnyObject>.self
     }
+}
+
+// MARK: - Private
+@available(iOS 14.0, *)
+private extension Logger {
+
+    static let main = Logger(subsystem: "com.nuglif.ngtools", category: "Defaults")
 }
