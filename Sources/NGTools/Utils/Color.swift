@@ -20,7 +20,7 @@ public struct Color {
     var alpha: CGFloat { rgba.alpha }
 
     public init(_ uicolor: UIColor) {
-        self.init(red: uicolor.redValue, green: uicolor.greenValue, blue: uicolor.blueValue, alpha: uicolor.alphaValue)
+        self.init(red: uicolor.ciColor.red, green: uicolor.ciColor.green, blue: uicolor.ciColor.blue, alpha: uicolor.ciColor.alpha)
     }
 
     public init(hex: String, alpha: CGFloat = 1) {
@@ -81,11 +81,3 @@ extension Color: Codable {
         try container.encode(toHex())
     }
 }
-
-private extension UIColor {
-    var redValue: CGFloat{ return CIColor(color: self).red }
-    var greenValue: CGFloat{ return CIColor(color: self).green }
-    var blueValue: CGFloat{ return CIColor(color: self).blue }
-    var alphaValue: CGFloat{ return CIColor(color: self).alpha }
-}
-
