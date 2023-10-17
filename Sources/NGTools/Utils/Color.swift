@@ -19,6 +19,12 @@ public struct Color {
     var blue: CGFloat { rgba.blue }
     var alpha: CGFloat { rgba.alpha }
 
+    public init(_ uicolor: UIColor) {
+        let ciColor = CIColor(color: uicolor)
+
+        self.init(red: ciColor.red, green: ciColor.green, blue: ciColor.blue, alpha: ciColor.alpha)
+    }
+
     public init(hex: String, alpha: CGFloat = 1) {
         let hexCode = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
 
