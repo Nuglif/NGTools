@@ -19,8 +19,10 @@ open class Defaults: NSObject {
     private let backingStore: UserDefaults?
     private let encoder: JSONEncoder
     private let decoder: JSONDecoder
+    private let name: String
 
     public init(name: String = Constants.defaultName, encoder: JSONEncoder = .init(), decoder: JSONDecoder = .init()) {
+        self.name = name
         self.backingStore = UserDefaults(suiteName: name)
         self.encoder = encoder
         self.decoder = decoder
@@ -67,6 +69,10 @@ extension Defaults: CodableStorage {
                 print("Error storing object: \(error)")
             }
         }
+    }
+
+    public func reset() {
+        UserDefaults.standard.removePersistentDomain(forName: name)
     }
 }
 
