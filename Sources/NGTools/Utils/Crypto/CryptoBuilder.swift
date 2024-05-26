@@ -10,10 +10,6 @@ import Foundation
 
 struct CryptoBuilder {
     static func build() -> ServerEncryptor {
-        if #available(iOS 13.0, *) {
-            return CryptoKitServerEncryptor()
-        } else {
-            return CryptoSwiftServerEncryptor()
-        }
+        return CryptoKitServerEncryptor()
     }
 }

@@ -44,11 +44,7 @@ extension Defaults: CodableStorage {
                 return nil
             }
         } catch {
-            if #available(iOS 14.0, *) {
-                Logger.main.error("Error retreiving object: \(error)")
-            } else {
-                print("Error retreiving object: \(error)")
-            }
+            Logger.main.error("Error retreiving object: \(error)")
             return nil
         }
 
@@ -63,11 +59,7 @@ extension Defaults: CodableStorage {
                 backingStore?.set(data, forKey: key.name)
             }
         } catch {
-            if #available(iOS 14.0, *) {
-                Logger.main.error("Error storing object: \(error)")
-            } else {
-                print("Error storing object: \(error)")
-            }
+            Logger.main.error("Error storing object: \(error)")
         }
     }
 
@@ -113,8 +105,6 @@ private extension Key {
 }
 
 // MARK: - Private
-@available(iOS 14.0, *)
 private extension Logger {
-
     static let main = Logger(subsystem: "com.nuglif.ngtools", category: "Defaults")
 }

@@ -16,32 +16,7 @@ final class CryptoTests: XCTestCase {
     let base64KeyData = "xuklFcMMklVs3uOwsaOGLzgVpZyjhgm8Ffm9Qf27JZc="
     let base64IVData = "4lKdApKttNHlw4p/nwKEVw=="
 
-    func testCryptoSwiftAESEncryption() {
-        do {
-            guard let keyData = Data(base64Encoded: base64KeyData), let ivData = Data(base64Encoded: base64IVData) else {
-                XCTFail("Failed to create data")
-                return
-            }
-
-            let encodedData = try CryptoSwiftAES.encrypt(message, aesKey: keyData, iv: ivData)
-            let encodedDataBase64 = encodedData.cipherText.base64EncodedString()
-            let expectedValue = "mU4TsQ24Ug=="
-
-            XCTAssertEqual(encodedDataBase64, expectedValue, "Unexpected encrypted data")
-
-            let decodedData = try CryptoSwiftAES.decrypt(encodedData.cipherText, aesKey: keyData, iv: ivData, tag: encodedData.tag)
-            XCTAssertEqual(String(data: decodedData, encoding: .utf8), message)
-
-        } catch Crypto.CryptoError.aesEncryptionError {
-            XCTFail("Failed to encrypt message")
-        } catch {
-            XCTFail("Failed to decrypt message")
-        }
-    }
-
     func testCryptoKitAESEncryption() {
-        guard #available(iOS 13, *) else { return }
-        
         do {
             guard let keyData = Data(base64Encoded: base64KeyData) else {
                 XCTFail("Failed to create data")
