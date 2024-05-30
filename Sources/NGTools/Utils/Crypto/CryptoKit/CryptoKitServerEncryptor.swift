@@ -9,7 +9,6 @@
 import Foundation
 import CryptoKit
 
-@available(iOS 13.0, *)
 struct CryptoKitServerEncryptor: ServerEncryptor {
 
     func encryptForAuthenticationServer(_ text: String, rsaPublicKey: String) throws -> String {

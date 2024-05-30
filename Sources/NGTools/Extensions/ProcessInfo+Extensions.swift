@@ -9,10 +9,5 @@
 import Foundation
 
 public extension ProcessInfo {
-
-    @objc var isAppRunningOnMac: Bool {
-        guard #available(iOS 14.0, *) else { return false }
-
-        return isiOSAppOnMac
-    }
+    @objc var isAppRunningOnMac: Bool { isiOSAppOnMac }
 }

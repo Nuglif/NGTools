@@ -8,7 +8,6 @@
 
 import UIKit
 
-@available(iOS 11.0, *)
 public extension NSDirectionalEdgeInsets {
 
 	init(_ value: CGFloat) {

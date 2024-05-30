@@ -11,11 +11,7 @@ import UIKit
 public extension UIFont {
 
     var dynamicTypeFont: UIFont {
-        if #available(iOS 11.0, *) {
-            return UIFontMetrics.default.scaledFont(for: self)
-        } else {
-            return self
-        }
+        return UIFontMetrics.default.scaledFont(for: self)
     }
 
     static func customFont(for fontName: String?, size: CGFloat, fallbackFont: UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)) -> UIFont {
