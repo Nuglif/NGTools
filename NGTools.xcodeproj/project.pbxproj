@@ -64,6 +64,7 @@
 		B295F3B4290772E500CB4087 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B295F3B3290772E500CB4087 /* CryptoSwift */; };
 		EDA367DA2BDBF7D90070383D /* VersionRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA367D92BDBF7D90070383D /* VersionRange.swift */; };
 		EDA367DC2BDBF8430070383D /* VersionRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA367DB2BDBF8430070383D /* VersionRangeTests.swift */; };
+		F718AA012C10B4E700137A5E /* ThreadSafeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718AA002C10B4E700137A5E /* ThreadSafeSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		B295F3AD2907729D00CB4087 /* CryptoRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRSA.swift; sourceTree = "<group>"; };
 		EDA367D92BDBF7D90070383D /* VersionRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRange.swift; sourceTree = "<group>"; };
 		EDA367DB2BDBF8430070383D /* VersionRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRangeTests.swift; sourceTree = "<group>"; };
+		F718AA002C10B4E700137A5E /* ThreadSafeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSafeSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 		A42157BA26EA34CA008C21D2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F718AA002C10B4E700137A5E /* ThreadSafeSet.swift */,
 				A4F8E8292A86BD1C0058F809 /* Storage */,
 				A4C75F4E27BED95B00F752A3 /* Migration */,
 				A42157BB26EA34CA008C21D2 /* curry.swift */,
@@ -460,6 +463,7 @@
 				A421580E26EA350F008C21D2 /* String+Extensions.swift in Sources */,
 				A421580526EA350F008C21D2 /* URL+Extensions.swift in Sources */,
 				A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */,
+				F718AA012C10B4E700137A5E /* ThreadSafeSet.swift in Sources */,
 				A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
 				A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */,
 				B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */,
