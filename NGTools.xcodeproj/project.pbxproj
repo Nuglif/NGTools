@@ -65,6 +65,9 @@
 		EDA367DA2BDBF7D90070383D /* VersionRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA367D92BDBF7D90070383D /* VersionRange.swift */; };
 		EDA367DC2BDBF8430070383D /* VersionRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA367DB2BDBF8430070383D /* VersionRangeTests.swift */; };
 		F718AA012C10B4E700137A5E /* ThreadSafeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718AA002C10B4E700137A5E /* ThreadSafeSet.swift */; };
+		F71C1C542C24B4C30079EA5A /* ThreadSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C1C532C24B4C30079EA5A /* ThreadSafeDictionary.swift */; };
+		F71C1C572C24B4D80079EA5A /* ThreadSafeDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C1C552C24B4D80079EA5A /* ThreadSafeDictionaryTests.swift */; };
+		F71C1C582C24B4D80079EA5A /* ThreadSafeSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C1C562C24B4D80079EA5A /* ThreadSafeSetTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,9 @@
 		EDA367D92BDBF7D90070383D /* VersionRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRange.swift; sourceTree = "<group>"; };
 		EDA367DB2BDBF8430070383D /* VersionRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRangeTests.swift; sourceTree = "<group>"; };
 		F718AA002C10B4E700137A5E /* ThreadSafeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSafeSet.swift; sourceTree = "<group>"; };
+		F71C1C532C24B4C30079EA5A /* ThreadSafeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionary.swift; sourceTree = "<group>"; };
+		F71C1C552C24B4D80079EA5A /* ThreadSafeDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionaryTests.swift; sourceTree = "<group>"; };
+		F71C1C562C24B4D80079EA5A /* ThreadSafeSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeSetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,8 @@
 		A42157B326EA34CA008C21D2 /* NGToolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				F71C1C552C24B4D80079EA5A /* ThreadSafeDictionaryTests.swift */,
+				F71C1C562C24B4D80079EA5A /* ThreadSafeSetTests.swift */,
 				B2454D7D29102936001E7B9E /* CryptoTests.swift */,
 				A4F8E8322A8AADF60058F809 /* DefaultsTests.swift */,
 				9F71414827BF571F00CD8F6E /* DataExtensionTests.swift */,
@@ -210,6 +218,7 @@
 		A42157BA26EA34CA008C21D2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F71C1C532C24B4C30079EA5A /* ThreadSafeDictionary.swift */,
 				F718AA002C10B4E700137A5E /* ThreadSafeSet.swift */,
 				A4F8E8292A86BD1C0058F809 /* Storage */,
 				A4C75F4E27BED95B00F752A3 /* Migration */,
@@ -467,6 +476,7 @@
 				A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
 				A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */,
 				B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */,
+				F71C1C542C24B4C30079EA5A /* ThreadSafeDictionary.swift in Sources */,
 				A4F8E82B2A86BD350058F809 /* Defaults.swift in Sources */,
 				A42157E126EA34CA008C21D2 /* stringify.swift in Sources */,
 				A42157EA26EA34CA008C21D2 /* FailableDecodable.swift in Sources */,
@@ -480,6 +490,8 @@
 				A42157FE26EA34DE008C21D2 /* UserDefaultsPersistanceTests.swift in Sources */,
 				9F71414A27BF583400CD8F6E /* DataExtensionTests.swift in Sources */,
 				A494C0BC27C40EE700EA0C37 /* MigrationTests.swift in Sources */,
+				F71C1C572C24B4D80079EA5A /* ThreadSafeDictionaryTests.swift in Sources */,
+				F71C1C582C24B4D80079EA5A /* ThreadSafeSetTests.swift in Sources */,
 				A42157FD26EA34DE008C21D2 /* UrlTests.swift in Sources */,
 				EDA367DC2BDBF8430070383D /* VersionRangeTests.swift in Sources */,
 				B2454D7E29102936001E7B9E /* CryptoTests.swift in Sources */,
