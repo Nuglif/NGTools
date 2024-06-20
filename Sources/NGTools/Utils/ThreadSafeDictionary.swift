@@ -50,4 +50,6 @@ public class ThreadSafeDictionary<Key: Hashable, Item> {
             self.dictionary.first(where: predicate)
         }
     }
+
+    public func copy() -> [Key: Item] { queue.sync { dictionary } }
 }
