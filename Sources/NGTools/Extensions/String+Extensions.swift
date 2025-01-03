@@ -17,7 +17,7 @@ public extension String {
     var isEmptyOrContainsOnlyWhitespaces: Bool { trimmingCharacters(in: CharacterSet.whitespaces).count == 0 }
 
     var urlEncoded: String? {
-        let characters = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted
+        let characters = CharacterSet(charactersIn: "|!*'();:@&=+$,/?%#[] ").inverted
 
         return addingPercentEncoding(withAllowedCharacters: characters)
     }
