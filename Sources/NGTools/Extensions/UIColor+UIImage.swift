@@ -17,12 +17,13 @@ public extension UIColor {
 
     func image(size: CGSize) -> UIImage? {
         let rect = CGRect(origin: .zero, size: size)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(self.cgColor)
-        context?.fill(rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        let format = UIGraphicsImageRendererFormat.default()
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        let newImage = renderer.image { context in
+            context.cgContext.setFillColor(self.cgColor)
+            context.cgContext.fill(rect)
+        }
+
         return newImage
     }
 
