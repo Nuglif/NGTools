@@ -19,13 +19,23 @@ public protocol JsonLoader {
 }
 
 public extension JsonLoader {
+
     func decodeJson<T: Decodable>(decoder: JSONDecoder = .init(), for type: T.Type = T.self) -> T? {
-        var result: T?
         do {
             let data = try JSONSerialization.data(withJSONObject: self, options: [])
-            result = try decoder.decode(type, from: data)
-            return result
+            return try decoder.decode(type, from: data)
         } catch {
+            debugPrint("Error decoding JSON: \(error)")
+            return nil
+        }
+    }
+
+    func decodeJson<T: Decodable>(decoder: JSONDecoder = .init(), for type: T.Type = T.self, error: inout NSError?) -> T? {
+        do {
+            let data = try JSONSerialization.data(withJSONObject: self, options: [])
+            return try decoder.decode(type, from: data)
+        } catch (let e) {
+            error = e as NSError
             return nil
         }
     }
