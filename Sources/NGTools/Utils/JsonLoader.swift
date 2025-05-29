@@ -15,21 +15,52 @@ public func += <KeyType, ValueType> (left: inout [KeyType: ValueType], right: [K
 }
 
 public protocol JsonLoader {
-    func decodeJson<T: Decodable>(decoder: JSONDecoder, for type: T.Type) -> T?
+
+    func decodeJson<T: Decodable>(decoder: JSONDecoder, for type: T.Type, error: inout NSError?) -> T?
 }
 
 public extension JsonLoader {
+
     func decodeJson<T: Decodable>(decoder: JSONDecoder = .init(), for type: T.Type = T.self) -> T? {
-        var result: T?
+        var error: NSError?
+        return decodeJson(decoder: decoder, for: type, error: &error)
+    }
+}
+
+extension Dictionary: JsonLoader {
+
+    public func decodeJson<T: Decodable>(decoder: JSONDecoder = .init(), for type: T.Type = T.self, error: inout NSError?) -> T? {
         do {
-            let data = try JSONSerialization.data(withJSONObject: self, options: [])
-            result = try decoder.decode(type, from: data)
-            return result
-        } catch {
+            let data = try JSONSerialization.data(withJSONObject: self)
+            return try decoder.decode(type, from: data)
+        } catch (let e) {
+            error = e as NSError
             return nil
         }
     }
 }
 
-extension Dictionary: JsonLoader {}
-extension NSDictionary: JsonLoader {}
+extension NSDictionary: JsonLoader {
+
+    public func decodeJson<T: Decodable>(decoder: JSONDecoder = .init(), for type: T.Type = T.self, error: inout NSError?) -> T? {
+        do {
+            let data = try JSONSerialization.data(withJSONObject: self)
+            return try decoder.decode(type, from: data)
+        } catch (let e) {
+            error = e as NSError
+            return nil
+        }
+    }
+}
+
+extension Data: JsonLoader {
+
+    public func decodeJson<T: Decodable>(decoder: JSONDecoder = .init(), for type: T.Type = T.self, error: inout NSError?) -> T? {
+        do {
+            return try decoder.decode(type, from: self)
+        } catch (let e) {
+            error = e as NSError
+            return nil
+        }
+    }
+}
