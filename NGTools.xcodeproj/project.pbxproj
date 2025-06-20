@@ -13,7 +13,6 @@
 		A42157E026EA34CA008C21D2 /* PersistanceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BC26EA34CA008C21D2 /* PersistanceStrategy.swift */; };
 		A42157E126EA34CA008C21D2 /* stringify.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BD26EA34CA008C21D2 /* stringify.swift */; };
 		A42157E226EA34CA008C21D2 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BE26EA34CA008C21D2 /* CacheItem.swift */; };
-		A42157E326EA34CA008C21D2 /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157BF26EA34CA008C21D2 /* AnyDecodable.swift */; };
 		A42157E426EA34CA008C21D2 /* ConvenienceMathOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157C026EA34CA008C21D2 /* ConvenienceMathOperators.swift */; };
 		A42157E526EA34CA008C21D2 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157C126EA34CA008C21D2 /* JsonLoader.swift */; };
 		A42157E626EA34CA008C21D2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42157C226EA34CA008C21D2 /* Validator.swift */; };
@@ -60,6 +59,7 @@
 		B247130D2911697600FBD1E9 /* CryptoKitServerEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247130C2911697600FBD1E9 /* CryptoKitServerEncryptor.swift */; };
 		B2471311291169C600FBD1E9 /* ServerEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2471310291169C600FBD1E9 /* ServerEncryptor.swift */; };
 		B247131529116C1800FBD1E9 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247131429116C1800FBD1E9 /* Crypto.swift */; };
+		B25D8C922E05E64100326417 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D8C912E05E64100326417 /* AnyCodable.swift */; };
 		B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AD2907729D00CB4087 /* CryptoRSA.swift */; };
 		B295F3B4290772E500CB4087 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B295F3B3290772E500CB4087 /* CryptoSwift */; };
 		EDA367DA2BDBF7D90070383D /* VersionRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA367D92BDBF7D90070383D /* VersionRange.swift */; };
@@ -92,7 +92,6 @@
 		A42157BC26EA34CA008C21D2 /* PersistanceStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceStrategy.swift; sourceTree = "<group>"; };
 		A42157BD26EA34CA008C21D2 /* stringify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stringify.swift; sourceTree = "<group>"; };
 		A42157BE26EA34CA008C21D2 /* CacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
-		A42157BF26EA34CA008C21D2 /* AnyDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
 		A42157C026EA34CA008C21D2 /* ConvenienceMathOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceMathOperators.swift; sourceTree = "<group>"; };
 		A42157C126EA34CA008C21D2 /* JsonLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 		A42157C226EA34CA008C21D2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		B247130C2911697600FBD1E9 /* CryptoKitServerEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoKitServerEncryptor.swift; sourceTree = "<group>"; };
 		B2471310291169C600FBD1E9 /* ServerEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEncryptor.swift; sourceTree = "<group>"; };
 		B247131429116C1800FBD1E9 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		B25D8C912E05E64100326417 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		B295F3AD2907729D00CB4087 /* CryptoRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRSA.swift; sourceTree = "<group>"; };
 		EDA367D92BDBF7D90070383D /* VersionRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRange.swift; sourceTree = "<group>"; };
 		EDA367DB2BDBF8430070383D /* VersionRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRangeTests.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 				A42157BC26EA34CA008C21D2 /* PersistanceStrategy.swift */,
 				A42157BD26EA34CA008C21D2 /* stringify.swift */,
 				A42157BE26EA34CA008C21D2 /* CacheItem.swift */,
-				A42157BF26EA34CA008C21D2 /* AnyDecodable.swift */,
+				B25D8C912E05E64100326417 /* AnyCodable.swift */,
 				A42157C026EA34CA008C21D2 /* ConvenienceMathOperators.swift */,
 				A42157C126EA34CA008C21D2 /* JsonLoader.swift */,
 				A42157C226EA34CA008C21D2 /* Validator.swift */,
@@ -438,7 +438,6 @@
 				A421580326EA350F008C21D2 /* Array+Extensions.swift in Sources */,
 				A421580A26EA350F008C21D2 /* Calendar+Extensions.swift in Sources */,
 				A42157E826EA34CA008C21D2 /* UserDefaultsPersistanceStrategy.swift in Sources */,
-				A42157E326EA34CA008C21D2 /* AnyDecodable.swift in Sources */,
 				A42157E426EA34CA008C21D2 /* ConvenienceMathOperators.swift in Sources */,
 				A494C0B827C40EC700EA0C37 /* MigrationStore.swift in Sources */,
 				A42157EC26EA34CA008C21D2 /* Color.swift in Sources */,
@@ -472,6 +471,7 @@
 				A421580E26EA350F008C21D2 /* String+Extensions.swift in Sources */,
 				A421580526EA350F008C21D2 /* URL+Extensions.swift in Sources */,
 				A4C75F5027BED96E00F752A3 /* MigrationRunner.swift in Sources */,
+				B25D8C922E05E64100326417 /* AnyCodable.swift in Sources */,
 				F718AA012C10B4E700137A5E /* ThreadSafeSet.swift in Sources */,
 				A421580C26EA350F008C21D2 /* NSDirectionalEdgeInsets+Extensions.swift in Sources */,
 				A494C0B927C40EC700EA0C37 /* MigrationTaskState.swift in Sources */,
