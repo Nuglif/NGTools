@@ -60,6 +60,7 @@
 		B2471311291169C600FBD1E9 /* ServerEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2471310291169C600FBD1E9 /* ServerEncryptor.swift */; };
 		B247131529116C1800FBD1E9 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247131429116C1800FBD1E9 /* Crypto.swift */; };
 		B25D8C922E05E64100326417 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D8C912E05E64100326417 /* AnyCodable.swift */; };
+		B25D8C972E0646B900326417 /* AnyCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D8C962E0646B000326417 /* AnyCodableTests.swift */; };
 		B295F3B02907729D00CB4087 /* CryptoRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295F3AD2907729D00CB4087 /* CryptoRSA.swift */; };
 		B295F3B4290772E500CB4087 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B295F3B3290772E500CB4087 /* CryptoSwift */; };
 		EDA367DA2BDBF7D90070383D /* VersionRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA367D92BDBF7D90070383D /* VersionRange.swift */; };
@@ -134,6 +135,7 @@
 		B2471310291169C600FBD1E9 /* ServerEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEncryptor.swift; sourceTree = "<group>"; };
 		B247131429116C1800FBD1E9 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		B25D8C912E05E64100326417 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
+		B25D8C962E0646B000326417 /* AnyCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodableTests.swift; sourceTree = "<group>"; };
 		B295F3AD2907729D00CB4087 /* CryptoRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoRSA.swift; sourceTree = "<group>"; };
 		EDA367D92BDBF7D90070383D /* VersionRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRange.swift; sourceTree = "<group>"; };
 		EDA367DB2BDBF8430070383D /* VersionRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionRangeTests.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		A42157B326EA34CA008C21D2 /* NGToolsTests */ = {
 			isa = PBXGroup;
 			children = (
+				B25D8C962E0646B000326417 /* AnyCodableTests.swift */,
 				F71C1C552C24B4D80079EA5A /* ThreadSafeDictionaryTests.swift */,
 				F71C1C562C24B4D80079EA5A /* ThreadSafeSetTests.swift */,
 				B2454D7D29102936001E7B9E /* CryptoTests.swift */,
@@ -494,6 +497,7 @@
 				F71C1C582C24B4D80079EA5A /* ThreadSafeSetTests.swift in Sources */,
 				A42157FD26EA34DE008C21D2 /* UrlTests.swift in Sources */,
 				EDA367DC2BDBF8430070383D /* VersionRangeTests.swift in Sources */,
+				B25D8C972E0646B900326417 /* AnyCodableTests.swift in Sources */,
 				B2454D7E29102936001E7B9E /* CryptoTests.swift in Sources */,
 				A4F8E8342A8AB0D90058F809 /* DefaultsTests.swift in Sources */,
 			);

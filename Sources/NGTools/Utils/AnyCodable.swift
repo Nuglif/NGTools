@@ -6,6 +6,7 @@
 //  Copyright © 2018 Nuglif. All rights reserved.
 //
 
+//MARK: - JSONCodingKeys
 public struct JSONCodingKeys: CodingKey {
 
     public var stringValue: String
@@ -21,6 +22,7 @@ public struct JSONCodingKeys: CodingKey {
     }
 }
 
+//MARK: - Decode
 public extension KeyedDecodingContainer {
 
     func decode(_ type: [String: Any].Type, forKey key: K) throws -> [String: Any] {
@@ -107,12 +109,14 @@ extension UnkeyedDecodingContainer {
     }
 }
 
+//MARK: - Encode
 public extension KeyedEncodingContainer {
     mutating func encodeIfPresent(_ value: [String: Any]?, forKey key: KeyedEncodingContainer<K>.Key) throws {
         guard let safeValue = value, !safeValue.isEmpty else {
             return
         }
         var container = self.nestedContainer(keyedBy: JSONCodingKeys.self, forKey: key)
+
         for item in safeValue {
             if let val = item.value as? Int {
                 try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
@@ -133,50 +137,60 @@ public extension KeyedEncodingContainer {
     }
 
     mutating func encodeIfPresent(_ value: [Any]?, forKey key: KeyedEncodingContainer<K>.Key) throws {
-        guard let safeValue = value else {
-            return
-        }
-        if let val = safeValue as? [Int] {
-            try self.encodeIfPresent(val, forKey: key)
-        } else if let val = safeValue as? [String] {
-            try self.encodeIfPresent(val, forKey: key)
-        } else if let val = safeValue as? [Double] {
-            try self.encodeIfPresent(val, forKey: key)
-        } else if let val = safeValue as? [Float] {
-            try self.encodeIfPresent(val, forKey: key)
-        } else if let val = safeValue as? [Bool] {
-            try self.encodeIfPresent(val, forKey: key)
-        } else if let val = value as? [[String: Any]] {
-            var container = self.nestedUnkeyedContainer(forKey: key)
-            try container.encode(contentsOf: val)
+        guard let safeValue = value else { return }
+        var container = self.nestedUnkeyedContainer(forKey: key)
+        try container.encode(safeValue)
+    }
+}
+
+extension KeyedEncodingContainer where K == JSONCodingKeys {
+    mutating func encode(_ dictionary: [String: Any]) throws {
+        for (stringKey, value) in dictionary {
+            let key = JSONCodingKeys(stringValue: stringKey)
+            if let val = value as? Int {
+                try encode(val, forKey: key)
+            } else if let val = value as? String {
+                try encode(val, forKey: key)
+            } else if let val = value as? Bool {
+                try encode(val, forKey: key)
+            } else if let val = value as? Double {
+                try encode(val, forKey: key)
+            } else if let val = value as? Float {
+                try encode(val, forKey: key)
+            } else if let nestedArray = value as? [Any] {
+                var nestedArrayContainer = nestedUnkeyedContainer(forKey: key)
+                try nestedArrayContainer.encode(nestedArray)
+            } else if let dict = value as? [String: Any] {
+                var nestedDictContainer = nestedContainer(keyedBy: JSONCodingKeys.self, forKey: key)
+                try nestedDictContainer.encode(dict)
+            } else {
+                try encodeNil(forKey: key)
+            }
         }
     }
 }
 
 extension UnkeyedEncodingContainer {
-    mutating func encode(contentsOf sequence: [[String: Any]]) throws {
-        for dict in sequence {
-            try self.encodeIfPresent(dict)
-        }
-    }
-
-    mutating func encodeIfPresent(_ value: [String: Any]) throws {
-        var container = self.nestedContainer(keyedBy: JSONCodingKeys.self)
-        for item in value {
-            if let val = item.value as? Int {
-                try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
-            } else if let val = item.value as? String {
-                try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
-            } else if let val = item.value as? Double {
-                try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
-            } else if let val = item.value as? Float {
-                try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
-            } else if let val = item.value as? Bool {
-                try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
-            } else if let val = item.value as? [Any] {
-                try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
-            } else if let val = item.value as? [String: Any] {
-                try container.encodeIfPresent(val, forKey: JSONCodingKeys(stringValue: item.key))
+    mutating func encode(_ value: [Any]) throws {
+        for element in value {
+            if let val = element as? Int {
+                try encode(val)
+            } else if let val = element as? String {
+                try encode(val)
+            } else if let val = element as? Bool {
+                try encode(val)
+            } else if let val = element as? Double {
+                try encode(val)
+            } else if let val = element as? Float {
+                try encode(val)
+            } else if let nestedArray = element as? [Any] {
+                var nested = nestedUnkeyedContainer()
+                try nested.encode(nestedArray)
+            } else if let dict = element as? [String: Any] {
+                var nested = nestedContainer(keyedBy: JSONCodingKeys.self)
+                try nested.encode(dict)
+            } else {
+                try encodeNil()
             }
         }
     }
